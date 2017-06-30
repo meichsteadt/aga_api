@@ -25,7 +25,7 @@ for path in product_paths:
     #Splits the name and number into separate values
     name_number = tree.xpath('//*[@id="picBox"]/h1')[0].text
     split = name_number.split(' ')
-    number = split[0].split('-')[0]
+    number = split[0]
     if len(split) > 1:
         name = ""
         for index in range(1,len(split)):

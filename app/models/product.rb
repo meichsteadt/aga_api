@@ -9,51 +9,49 @@ class Product < ApplicationRecord
     ProductItem.all.each do |prod|
       prod.destroy
     end
+    Product.get_products
   end
 
   def self.get_products
-    Product.get_bedrooms
-    Product.get_dining
-  end
-
-  def self.get_bedrooms
-    csv_text = File.read("bedroom.csv")
-    csv = CSV.parse(csv_text, :headers => true)
-    csv.each do |row|
-      product = Product.create(name: row['name'], description: row['description'], image: row['image'], number: row['number'], category: 'bedroom')
+    categories = ["dining", "bedroom", "seating"]
+    categories.each do |category|
+      csv_text = File.read("#{category}.csv")
+      csv = CSV.parse(csv_text, :headers => true)
+      csv.each do |row|
+        Product.create(name: row['name'], description: row['description'], image: row['image'], number: row['number'], category: category, popularity: 0)
+      end
+      csv_text = File.read("#{category}_items.csv")
+      csv = CSV.parse(csv_text, :headers => true)
+      csv.each do |row|
+        Product.where(number: row['product_number'], category: category).first.product_items.create(number: row['number'], description: row['description'], dimensions: row['dimensions'], product_number: row['product_number'])
+      end
     end
-    Product.get_bedroom_items
+    ProductItem.get_prices
+    Product.filter
   end
 
-  def self.get_bedroom_items
-    csv_text = File.read("bedroom_items.csv")
-    csv = CSV.parse(csv_text, :headers => true)
-    csv.each do |row|
-      Product.find_by_number(row['product_number']).product_items.create(number: row['number'], description: row['description'], dimensions: row['dimensions'])
-    end
-  end
-
-  def self.get_dining
-    csv_text = File.read("dining.csv")
-    csv = CSV.parse(csv_text, :headers => true)
-    csv.each do |row|
-      Product.create(name: row['name'], description: row['description'], image: row['image'], number: row['number'], category: 'dining')
-    end
-    Product.get_dining_items
-  end
-
-  def self.get_dining_items
-    csv_text = File.read("dining_items.csv")
-    csv = CSV.parse(csv_text, :headers => true)
-    csv.each do |row|
-      Product.find_by_number(row['product_number']).product_items.create(number: row['number'], description: row['description'], dimensions: row['dimensions'])
+  def self.filter
+    ProductItem.all.each do |product|
+      if Discontinued.find_by_number(product.number)
+        product.destroy
+      end
+      if product.number.split('-').first.last(3) == "KRF"
+        updated_number = product.number.sub!("KRF", "RFK")
+        product.update(number: updated_number)
+      end
+      if product.number == "1704k-1EK"
+        product.update(number: "1704K-1EK")
+      end
     end
   end
 
   def self.update_files
     `python bedroom_scraper.py`
     `python bedroom_items_scraper.py`
-    `python dining_items_scraper.py`
     `python dining_scraper.py`
+    `python dining_items_scraper.py`
+    `python seating_scraper.py`
+    `python seating_items_scraper.py`
   end
+
 end

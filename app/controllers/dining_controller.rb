@@ -1,16 +1,16 @@
-class ProductsController < ApplicationController
+class DiningController < ApplicationController
   before_action :set_product, only: [:show]
 
   # GET /products
   def index
-    @products = Product.all
+    @products = Product.where(category: "dining")
 
     render json: @products
   end
 
   # GET /products/1
   def show
-    @product.update(popularity: (@product.popularity + 1))
+    @product.update(recent_view: DateTime.now)
     render json: {"product": @product, "product_items": @product.product_items}
   end
 

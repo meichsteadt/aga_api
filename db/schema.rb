@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606225552) do
+ActiveRecord::Schema.define(version: 20170630213639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discontinueds", force: :cascade do |t|
+    t.string "number"
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.string   "email_address"
+    t.integer  "product_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "prices", force: :cascade do |t|
     t.string "number"
@@ -26,18 +37,20 @@ ActiveRecord::Schema.define(version: 20170606225552) do
     t.integer  "price"
     t.string   "description"
     t.string   "dimensions"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "product_number"
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "number"
     t.string   "name"
     t.string   "description"
     t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "category"
+    t.string   "number"
+    t.integer  "popularity"
   end
 
 end

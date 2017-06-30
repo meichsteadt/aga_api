@@ -6,15 +6,17 @@ import re
 products = []
 products_page = requests.get('https://www.homelegance.com/bedroom/')
 product_tree = html.fromstring(products_page.content)
+products_on_page = len(product_tree.xpath('//*[@id="catList"]')[0])
 product_paths = []
-for index in range(1,11):
+for index in range(1,products_on_page + 1):
     product_path = product_tree.xpath('//*[@id="catList"]/li[{0}]/a/@href'.format(index))[0]
     product_paths.append(product_path)
 
 for index in range(2,16):
     products_page = requests.get('https://www.homelegance.com/bedroom/page/{0}/'.format(index))
     product_tree = html.fromstring(products_page.content)
-    for index in range(1,11):
+    products_on_page = len(product_tree.xpath('//*[@id="catList"]')[0])
+    for index in range(1,products_on_page + 1):
         product_path = product_tree.xpath('//*[@id="catList"]/li[{0}]/a/@href'.format(index))[0]
         product_paths.append(product_path)
 
@@ -25,7 +27,7 @@ for path in product_paths:
     #Splits the name and number into separate values
     name_number = tree.xpath('//*[@id="picBox"]/h1')[0].text
     split = name_number.split(' ')
-    number = split[0].split('-')[0]
+    number = split[0]
     if len(split) > 1:
         name = ""
         for index in range(1,len(split)):
@@ -47,23 +49,22 @@ for path in product_paths:
     for index in range(2,items_list_length + 1):
         item = {}
         if len(tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[1]'.format(index))) > 0:
-            item_number = tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[1]'.format(index))[0].text
+            item_number = tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[1]'.format(index))[0].text_content()
         else:
             item_number = ''
         if len(tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[2]'.format(index))) > 0:
-            item_description = tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[2]'.format(index))[0].text
+            item_description = tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[2]'.format(index))[0].text_content()
         else:
             item_description = ''
         if len(tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[3]'.format(index))) > 0:
-            item_dimensions = tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[3]'.format(index))[0].text
+            item_dimensions = tree.xpath('//*[@id="tabProdInfo"]/table/tr[{0}]/td[3]'.format(index))[0].text_content()
         else:
             item_dimensions = ''
         item = {'product_number': product['number'], 'number': item_number, 'description': item_description, 'dimensions': item_dimensions}
         product['items'].append(item)
 
     products.append(product)
-    print product
-    print ''
+
 fieldnames = products[0]['items'][0].keys()
 with open('bedroom_items.csv', "wb") as csv_file:
     writer = csv.DictWriter(csv_file, fieldnames)

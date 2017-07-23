@@ -8,26 +8,14 @@ class EmailsController < ApplicationController
     render json: @emails
   end
 
-  # GET /emails/1
-  def show
-    render json: @email
-  end
-
   # POST /emails
   def create
-    @email = Email.new(email_params)
+    @user = User.find_by_login(params[:client_id])
+    @email = @user.emails.new(email_params)
+    @email.product_number = Product.find(@email.product_id).number
     if @email.save
       ProductMailer.email_product(@email.email_address, @email.product_id).deliver_later
       render json: @email, status: :created, location: @email
-    else
-      render json: @email.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /emails/1
-  def update
-    if @email.update(email_params)
-      render json: @email
     else
       render json: @email.errors, status: :unprocessable_entity
     end
@@ -46,6 +34,6 @@ class EmailsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def email_params
-      params.permit(:email_address, :product_id)
+      params.permit(:email_address, :product_id, :login, :password)
     end
 end

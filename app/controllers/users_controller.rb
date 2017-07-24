@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :destroy]
 
   # GET /users
   def index
@@ -30,8 +30,9 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
-      render json: @user
+      render json: {"user": @user.as_json(except: [:password_digest]), "emails": @user.emails}
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -50,6 +51,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:login, :password, :bedroom_mult, :dining_mult, :seating_mult)
+      params.permit(:login, :password, :bedroom_mult, :dining_mult, :seating_mult)
     end
 end

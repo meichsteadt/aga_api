@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :update]
 
   # GET /products
   def index
@@ -10,8 +10,12 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
-    @product.update(popularity: (@product.popularity + 1))
     render json: {"product": @product, "product_items": @product.product_items}
+  end
+
+  def update
+    @product.update(popularity: (@product.popularity + 1))
+    render json: {"message": "product updated"}
   end
 
   private

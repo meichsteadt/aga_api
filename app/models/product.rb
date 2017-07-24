@@ -2,6 +2,19 @@ require 'csv'
 class Product < ApplicationRecord
   has_many :product_items
 
+  def get_related_products
+    if self.number[/([0-9]+)/]
+      related_products = Product.where("number LIKE ?", self.number[/([0-9]+)/] + "%").sort_by {|product| product.popularity}.reverse
+      products_to_add = []
+      related_products.each do |product|
+        if product.id != self.id && product.image != "https://www.homelegance.com/wp-content/themes/h2/images/misc/shim.gif"
+          products_to_add.push(product.id)
+        end
+      end
+      self.update(related_products: products_to_add)
+    end
+  end
+
   def self.reset
     Product.all.each do |prod|
       prod.destroy

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/:login/:password', to: "users#show"
   resources :users
   resources :emails
   resources :product_items, :dining, :seating, :bedroom, :products

@@ -41,6 +41,7 @@ class Product < ApplicationRecord
     end
     ProductItem.get_prices
     Product.filter
+    Product.all.each {|prod| prod.get_related_products}
   end
 
   def self.filter

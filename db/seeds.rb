@@ -1,3 +1,6 @@
+User.create!([
+  {login: "test", password: "password", bedroom_mult: 2.1, dining_mult: 2.3, seating_mult: 2.2}
+])
 Discontinued.create!([
   {number: "101N"},
   {number: "102"},
@@ -10933,7 +10936,4 @@ ProductItem.create!([
   {product_id: 1258, number: "4823GP", price: 99, description: nil, dimensions: nil, product_number: "4823GP"},
   {product_id: 1259, number: "4823BR", price: 99, description: nil, dimensions: nil, product_number: "4823BR"},
   {product_id: 1260, number: "4809CH", price: 199, description: nil, dimensions: nil, product_number: "4809CH"}
-])
-User.create!([
-  {login: "test", password: "password", bedroom_mult: 2.1, dining_mult: 2.3, seating_mult: 2.2}
 ])

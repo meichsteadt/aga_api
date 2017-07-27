@@ -1,6 +1,5 @@
 require 'csv'
 class ProductItem < ApplicationRecord
-  belongs_to :product
 
   def self.reset_prices
     ProductItem.all.each {|prod| prod.update(price: nil)}

@@ -45,13 +45,13 @@ ActiveRecord::Schema.define(version: 20170724214330) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.string   "number"
     t.string   "name"
     t.string   "description"
     t.string   "image"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.string   "category"
-    t.string   "number"
     t.integer  "popularity"
     t.integer  "related_products", default: [],              array: true
   end

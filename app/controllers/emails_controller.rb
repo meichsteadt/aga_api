@@ -10,7 +10,7 @@ class EmailsController < ApplicationController
 
   # POST /emails
   def create
-    @user = User.find_by_login(params[:client_id])
+    @user = User.find(params[:user_id])
     @email = @user.emails.new(email_params)
     @email.product_number = Product.find(@email.product_id).number
     if @email.save

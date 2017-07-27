@@ -1,3 +1,4 @@
+require "csv"
 class Discontinued < ApplicationRecord
   def self.get_discontinued
     csv_text = File.read("discontinued.csv")

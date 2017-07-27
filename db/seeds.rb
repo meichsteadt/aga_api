@@ -3429,31 +3429,6 @@ Discontinued.create!([
   {number: "RF1404-RR"},
   {number: "V105C"}
 ])
-Email.create!([
-  {email_address: "matteichsteadt@gmail.com", product_id: 996, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 996, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 996, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 906, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 906, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 906, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 1242, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 1242, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 1242, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 1242, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 1242, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 686, user_id: nil, product_number: nil},
-  {email_address: "lucaskeys@gmail.com", product_id: 940, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 996, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 996, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 906, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 911, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 906, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 673, user_id: nil, product_number: nil},
-  {email_address: "matteichsteadt@gmail.com", product_id: 673, user_id: 1, product_number: "1704-108"},
-  {email_address: "matteichsteadt@gmail.com", product_id: 906, user_id: 1, product_number: "1356C-1"},
-  {email_address: "matteichsteadt@gmail.com", product_id: 856, user_id: 1, product_number: "5438-1"},
-  {email_address: "matteichsteadt@gmail.com", product_id: 686, user_id: 1, product_number: "1915-60"}
-])
 Price.create!([
   {number: "1107BGD", price: 38.0},
   {number: "1107BLK", price: 45.0},

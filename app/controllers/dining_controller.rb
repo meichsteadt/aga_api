@@ -10,8 +10,11 @@ class DiningController < ApplicationController
 
   # GET /products/1
   def show
-    @product.update(recent_view: DateTime.now)
-    render json: {"product": @product, "product_items": @product.product_items}
+    pagenumber = params[:id].to_i
+    min = (pagenumber - 1) * 6
+    max = min + 6
+    @products = Product.where(category: "dining")[min...max]
+    render json: @products
   end
 
   private

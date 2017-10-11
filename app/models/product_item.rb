@@ -13,7 +13,7 @@ class ProductItem < ApplicationRecord
         prod.dining_prices
       elsif Product.find(prod.product_id).category == "seating"
         prod.seating_prices
-      elsif Product.find(prod.product_id).category == "youth"
+      else
         prod.youth_prices
       end
     end

@@ -4,7 +4,7 @@ import csv
 import re
 
 products = []
-products_page = requests.get('https://www.homelegance.com/youth/')
+products_page = requests.get('https://www.homelegance.com/occasional/')
 product_tree = html.fromstring(products_page.content)
 products_on_page = len(product_tree.xpath('//*[@id="catList"]')[0])
 product_paths = []
@@ -12,8 +12,8 @@ for index in range(1,products_on_page + 1):
     product_path = product_tree.xpath('//*[@id="catList"]/li[{0}]/a/@href'.format(index))[0]
     product_paths.append(product_path)
 
-for index in range(2,9):
-    products_page = requests.get('https://www.homelegance.com/youth/page/{0}/'.format(index))
+for index in range(2,12):
+    products_page = requests.get('https://www.homelegance.com/occasional/page/{0}/'.format(index))
     product_tree = html.fromstring(products_page.content)
     products_on_page = len(product_tree.xpath('//*[@id="catList"]')[0])
     for index in range(1,products_on_page + 1):
@@ -66,7 +66,7 @@ for path in product_paths:
     products.append(product)
 
 fieldnames = products[0]['items'][0].keys()
-with open('youth_items.csv', "wb") as csv_file:
+with open('occasional_items.csv', "wb") as csv_file:
     writer = csv.DictWriter(csv_file, fieldnames)
     writer.writeheader()
     for product in products:

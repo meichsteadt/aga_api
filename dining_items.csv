@@ -468,6 +468,10 @@ dimensions,description,product_number,number
 19 x 25 x 41H,Red Airlift Swivel Stool,2456-36,2456-24
 48 Dia x 30H,Round Dining Table,2466-48,2466-48
 22.25 x 22.5 x 39H,Side Chair,2466-48,2466S
+47.5 x 53.5 – 71.25 x 36H,Counter Height Table with Storage Base,5447-36XL,5447-36XL
+20.5 x 23 x 41.25H,Swivel Counter Height Chair,5447-36XL,5447-24S
+20.5 x 23 x 41.25H,Swivel Counter Height Chair,5447-36XL,5447-24FAS
+53 x 17.75 x 36H,Server,5447-36XL,5447-40
 54 x 54 – 72 x 36H,Counter Height Table with Storage Base,2489-36XL,2489-36XL
 21 x 24 x 42H,Counter Height Chair,2489-36XL,2489-24
 52 x 18 x 36H,Server,2489-36XL,2489-40
@@ -487,10 +491,6 @@ dimensions,description,product_number,number
 48 Dia x 30H,Round Dining Table,2516-48,2516-48
 25 x 26.75 x 37H,Dining Chair,2516-48,2516A
 18.75 x 25 x 38.75H,Side Chair,2516-48,2516S
-47.5 x 53.5 – 71.25 x 36H,Counter Height Table with Storage Base,5447-36XL,5447-36XL
-20.5 x 23 x 41.25H,Swivel Counter Height Chair,5447-36XL,5447-24S
-20.5 x 23 x 41.25H,Swivel Counter Height Chair,5447-36XL,5447-24FAS
-53 x 17.75 x 36H,Server,5447-36XL,5447-40
 42 x 60 – 78 x 30H,Dining Table,2477-78,2477-78
 18.5 x 22.5 x 41H,Side Chair,2477-78,2477S
 48 x 16 x 20H,"48"" Bench",2477-78,2477-13
@@ -500,12 +500,12 @@ dimensions,description,product_number,number
 48 x 18 x 36H,"49"" Bench",2456-64,2456-40
 31.5 x 55.25 x 30H,Dining Table,2447,2447
 17 x 21.25 x 40.75H,Side Chair,2447,2447WS
-36 Dia x 20.5H,Gas Lift Table,3217PU,3217PU
-16.25 x 16.25 x 17.5H,4pc Ottoman Pack with Storage,3217PU,3217PUS
 47.5 x 47.5 x 36H,Counter Height Table,5447-36,5447-36
 20.5 x 23 x 41.25H,Swivel Counter Height Chair,5447-36,5447-24S
 20.5 x 23 x 41.25H,Swivel Counter Height Chair,5447-36,5447-24FAS
 53 x 17.75 x 36H,Server,5447-36,5447-40
+36 Dia x 20.5H,Gas Lift Table,3217PU,3217PU
+16.25 x 16.25 x 17.5H,4pc Ottoman Pack with Storage,3217PU,3217PUS
 42 x 54 – 72 x 30H,Dining Table,5372-72,5372-72
 19.25 x 23.75 x 40H,Side Chair,5372-72,5372S
 47.75 x 17.75 x 61H,Curio,5372-72,5372-50
@@ -542,25 +542,25 @@ dimensions,description,product_number,number
 41 x 22 x 40H,Counter Height 2-Seater Chair,5351-36,5351-24TS
 46 x 60 – 78 x 30H,Dining Table,5448-78,5448-78
 20.5 x 27.25 x 38.25H,Side Chair,5448-78,5448S
+48 Dia x 30H,Round Dining Table,5327-48,5327-48
+20.5 x 24 x 40.75H,Side Chair,5327-48,5327S
 36 x 60 x 29.5H,Dining Table,5445-60,5445-60
 17.75 x 20.8 x 40H,Side Chair,5445-60,5445BKS
 36 x 60 x 30H,Side Chair,3270-60,3270-60
 19 x 24 x 38.5H,Side Chair,3270-60,3270-S1W
 19 x 24 x 38.5H,Side Chair,3270-60,3270-S1BK
-48 Dia x 30H,Round Dining Table,5327-48,5327-48
-20.5 x 24 x 40.75H,Side Chair,5327-48,5327S
 48 x 48 x 36H,Side Chair,3270-36,3270-36
 19 x 23 x 39H,Side Chair,3270-36,3270-24S1W
 19 x 23 x 39H,Side Chair,3270-36,3270-24S1BK
 36 x 48 x 30H,Side Chair,3270-48,3270-48
 19 x 24 x 38.5H,Side Chair,3270-48,3270-S1W
 19 x 24 x 38.5H,Side Chair,3270-48,3270-S1BK
-54 x 36 – 54 x 36H,Counter Height Table,1393W-36,1393W-36
-19.5 x 22 x 42.5H,Counter Height Chair,1393W-36,1393W-24
-45.5 x 18 x 54H,Curio,1393W-36,1393W-50
 48 x 56 – 72 x 36H,Counter Height Table with Storage Base,626-36,626-36
 21 x 24 x 42H,Counter Height Chair,626-36,626-24
 53 x 18 x 36H,Server,626-36,626-40
+54 x 36 – 54 x 36H,Counter Height Table,1393W-36,1393W-36
+19.5 x 22 x 42.5H,Counter Height Chair,1393W-36,1393W-24
+45.5 x 18 x 54H,Curio,1393W-36,1393W-50
 42 x 60 – 78 x 30H,Dining Table,1393BK-78,1393BK-78
 19.5 x 23 x 40.5H,Side Chair,1393BK-78,1393BKS
 45.5 x 18 x 54H,Curio,1393BK-78,1393BK-50
@@ -578,6 +578,9 @@ dimensions,description,product_number,number
 45.5 x 18 x 54H,Curio,1393W-48,1393W-50
 54 x 54 x 30H,Dining Table,5235-54,5235-54
 20 x 23 x 38H,Side Chair,5235-54,5235S
+60 Dia x 30H,Round Dining Table,586-60,586-60
+20 x 23 x 40H,Side Chair,586-60,586S
+52 x 18 x 33H,Server,586-60,586-40
 54 x 40 – 54 x 36H,Counter Height Table,727-36,727-36
 19 x 22.5 x 42.5H,Counter Height Chair,727-36,727-24
 52 x 18 x 34H,Server,727-36,727-40
@@ -597,9 +600,13 @@ dimensions,description,product_number,number
 54 x 36 – 54 x 36H,Counter Height Table,586-36,586-36
 20 x 22 x 41H,Counter Height Chair,586-36,586-24
 52 x 18 x 33H,Server,586-36,586-40
-60 Dia x 30H,Round Dining Table,586-60,586-60
-20 x 23 x 40H,Side Chair,586-60,586S
-52 x 18 x 33H,Server,586-60,586-40
+42 x 64 – 82 x 30H,Dining Table,5346-82,5346-82
+19 x 23 x 40H,Side Chair,5346-82,5346S
+60 x 17 x 20H,"60"" Bench",5346-82,5346-14
+52 x 18.25 x 36H,Server,5346-82,5346-40
+60 x 48 – 60 x 36H,Counter Height Table,5346-36,5346-36
+19.5 x 21.25 x 41H,Counter Height Chair,5346-36,5346-24
+52 x 18.25 x 36H,Server,5346-36,5346-40
 42 x 60 – 78 x 30H,Dining Table,1372-78,1372-78
 19.5 x 22.5 x 40H,Side Chair,1372-78,1372S
 54 x 18 x 36H,Server,1372-78,1372-40
@@ -609,13 +616,6 @@ dimensions,description,product_number,number
 42 x 54 – 72 x 30H,Dining Table,727-72,727-72
 19 x 23 x 38H,Side Chair,727-72,727S
 52 x 18 x 34H,Server,727-72,727-40
-42 x 64 – 82 x 30H,Dining Table,5346-82,5346-82
-19 x 23 x 40H,Side Chair,5346-82,5346S
-60 x 17 x 20H,"60"" Bench",5346-82,5346-14
-52 x 18.25 x 36H,Server,5346-82,5346-40
-60 x 48 – 60 x 36H,Counter Height Table,5346-36,5346-36
-19.5 x 21.25 x 41H,Counter Height Chair,5346-36,5346-24
-52 x 18.25 x 36H,Server,5346-36,5346-40
 54 Dia x 36H,Server,710-36RD,710-36RD
 20.5 x 24.5 x 40H,Server,710-36RD,710-24
 20.5 x 24.5 x 40H,Server,710-36RD,710-24W

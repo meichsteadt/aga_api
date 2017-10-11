@@ -13,6 +13,8 @@ class ProductItem < ApplicationRecord
         prod.dining_prices
       elsif Product.find(prod.product_id).category == "seating"
         prod.seating_prices
+      elsif Product.find(prod.product_id).category == "youth"
+        prod.youth_prices
       end
     end
     'got prices'
@@ -180,6 +182,13 @@ class ProductItem < ApplicationRecord
       sum = sum + Price.where(number: (prefix + "-3AC")).first.price
     end
     sum
+  end
+
+  def youth_prices
+    price = Price.find_by_number(self.number)
+    if price
+      self.update(price: price.price.to_f)
+    end
   end
 
   def self.check_prices

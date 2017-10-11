@@ -26,7 +26,7 @@ class Product < ApplicationRecord
   end
 
   def self.get_products
-    categories = ["dining", "bedroom", "seating"]
+    categories = ["dining", "bedroom", "seating", "youth"]
     categories.each do |category|
       csv_text = File.read("#{category}.csv")
       csv = CSV.parse(csv_text, :headers => true)
@@ -66,6 +66,8 @@ class Product < ApplicationRecord
     `python dining_items_scraper.py`
     `python seating_scraper.py`
     `python seating_items_scraper.py`
+    `python youth_scraper.py`
+    `python youth_item_scraper.py`
   end
 
 end

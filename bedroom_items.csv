@@ -949,22 +949,6 @@ HB: 54.25H FB: 27H,Twin Bed,1349-1,1349T-1
 54 x 18 x 40H,Dresser,1349-1,1349-5
 39 x 2 x 33H,Mirror,1349-1,1349-6
 33 x 18 x 52H,Chest,1349-1,1349-9
-HB: 53H FB: 17H,California King Sleigh Platform Bed,1313-1,1313K-1CK
-HB: 53H FB: 17H,Eastern King Sleigh Platform Bed,1313-1,1313K-1EK
-HB: 53H FB: 17H,Queen Sleigh Platform Bed,1313-1,1313-1
-27 x 17 x 27H,Night Stand,1313-1,1313-4
-62 x 17.5 x 35H,Dresser,1313-1,1313-5
-40 x 1 x 41H,Mirror,1313-1,1313-6
-38 x 17 x 52H,Chest,1313-1,1313-9
-42 x 17 x 40H,TV Chest,1313-1,1313-11
-HB: 58H FB: 28H,California King Bed,866NC-1,866KNC-1CK
-HB: 58H FB: 28H,Eastern King Bed,866NC-1,866KNC-1EK
-HB: 58H FB: 28H,Queen Bed,866NC-1,866NC-1
-HB: 58H FB: 28H,Full Bed,866NC-1,866FNC-1
-28 x 16 x 25H,Night Stand,866NC-1,866NC-4
-64 x 18.5 x 35H,Dresser,866NC-1,866NC-5
-36 x 2 x 50H,Mirror,866NC-1,866NC-6
-41 x 18 x 51H,Chest,866NC-1,866NC-9
 HB: 60H FB: 36H,California King Bed,1385-1,1385K-1CK
 HB: 60H FB: 36H,Eastern King Bed,1385-1,1385K-1EK
 HB: 60H FB: 36H,Queen Bed,1385-1,1385-1
@@ -975,6 +959,14 @@ HB: 60H FB: 36H,Full Bed,1385-1,1385F-1
 43 x 22 x 72H,Armoire,1385-1,1385-7
 38 x 18 x 55H,Chest,1385-1,1385-9
 42.75 x 19 x 42H,TV Chest,1385-1,1385-11
+HB: 58H FB: 28H,California King Bed,866NC-1,866KNC-1CK
+HB: 58H FB: 28H,Eastern King Bed,866NC-1,866KNC-1EK
+HB: 58H FB: 28H,Queen Bed,866NC-1,866NC-1
+HB: 58H FB: 28H,Full Bed,866NC-1,866FNC-1
+28 x 16 x 25H,Night Stand,866NC-1,866NC-4
+64 x 18.5 x 35H,Dresser,866NC-1,866NC-5
+36 x 2 x 50H,Mirror,866NC-1,866NC-6
+41 x 18 x 51H,Chest,866NC-1,866NC-9
 HB: 68H FB: 17H,California King Low Profile Bed,1390LP-1,1390LPK-1CK
 HB: 68H FB: 17H,Eastern King Low Profile Bed,1390LP-1,1390LPK-1EK
 HB: 68H FB: 17H,Queen Low Profile Bed,1390LP-1,1390LP-1
@@ -983,14 +975,6 @@ HB: 68H FB: 17H,Queen Low Profile Bed,1390LP-1,1390LP-1
 48 x 2.5 x 49H,Mirror,1390LP-1,1390-6
 50.25 x 24 x 86H,Armoire,1390LP-1,1390-7
 44 x 19.5 x 57H,Chest,1390LP-1,1390-9
-HB: 88H FB: 68H,California King Poster Bed,1390-1,1390K-1CK
-HB: 88H FB: 68H,Eastern King Poster Bed,1390-1,1390K-1EK
-HB: 88H FB: 68H,Queen Poster Bed,1390-1,1390-1
-33.5 x 18.5 x 32H,Night Stand,1390-1,1390-4
-69.5 x 20 x 37H,Dresser,1390-1,1390-5
-48 x 2.5 x 49H,Mirror,1390-1,1390-6
-50.25 x 24 x 86H,Armoire,1390-1,1390-7
-44 x 19.5 x 57H,Chest,1390-1,1390-9
 HB: 71H FB: 34H,California King Bi-Cast Leather Bed,1394-1,1394K-1CK
 HB: 71H FB: 34H,Eastern King Bi-Cast Leather Bed,1394-1,1394K-1EK
 HB: 71H FB: 34H,Queen Bi-Cast Leather Bed,1394-1,1394-1
@@ -999,6 +983,14 @@ HB: 71H FB: 34H,Queen Bi-Cast Leather Bed,1394-1,1394-1
 45.25 x 3.75 x 45.25H,Mirror,1394-1,1394-6
 44 x 21 x 58H,Chest with Marble Inset,1394-1,1394-9
 48 x 20 x 43.75H,TV Chest with Marble Top,1394-1,1394-11
+HB: 88H FB: 68H,California King Poster Bed,1390-1,1390K-1CK
+HB: 88H FB: 68H,Eastern King Poster Bed,1390-1,1390K-1EK
+HB: 88H FB: 68H,Queen Poster Bed,1390-1,1390-1
+33.5 x 18.5 x 32H,Night Stand,1390-1,1390-4
+69.5 x 20 x 37H,Dresser,1390-1,1390-5
+48 x 2.5 x 49H,Mirror,1390-1,1390-6
+50.25 x 24 x 86H,Armoire,1390-1,1390-7
+44 x 19.5 x 57H,Chest,1390-1,1390-9
 HB: 65.25H FB: 36H,California King Bed,1402-1,1402K-1CK
 HB: 65.25H FB: 36H,Eastern King Bed,1402-1,1402K-1EK
 HB: 65.25H FB: 36H,Queen Bed,1402-1,1402-1
@@ -1031,3 +1023,4 @@ HB: 52H FB: 14H,Queen / FULL Headboard,1882N-1HB,1882N-1HB
 HB: 44H FB: 12.5H,Queen Platform Bed,1880BUE-1,1880BUE-1
 HB: 44H FB: 12.5H,Queen Platform Bed,1880BRW-1,1880BRW-1
 HB: 48.5H ,Queen / FULL Headboard,2025-1HB,2025-1HB
+HB: 48.5H ,Queen / FULL Headboard,2026PU-1HB,2026PU-1HB

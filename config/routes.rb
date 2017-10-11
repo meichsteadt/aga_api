@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :products
   end
   resources :emails
-  resources :product_items, :dining, :seating, :bedroom, :products
+  resources :product_items, :dining, :seating, :bedroom, :products, :youth
 
   scope :format => true, :constraints => { :format => 'json' } do
     post   "/login"       => "sessions#create"

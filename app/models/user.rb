@@ -22,6 +22,12 @@ class User < ApplicationRecord
       return self.dining_mult
     elsif category == "seating"
       return self.seating_mult
+    elsif category == "youth"
+      return self.youth_mult
+    elsif category == "occasional"
+      return self.occasional_mult
+    elsif category == "home"
+      return self.home_mult
     else
       return nil
     end

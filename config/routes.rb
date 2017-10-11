@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   get 'users/:login/:password', to: "users#show"
-  resources :users
+  resources :users do
+    resources :products
+  end
   resources :emails
   resources :product_items, :dining, :seating, :bedroom, :products
+
+  scope :format => true, :constraints => { :format => 'json' } do
+    post   "/login"       => "sessions#create"
+    delete "/logout"      => "sessions#destroy"
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

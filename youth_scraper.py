@@ -12,7 +12,7 @@ for index in range(1,products_on_page + 1):
     product_paths.append(product_path)
 
 for index in range(2,9):
-    products_page = requests.get('https://www.homelegance.com/seating/page/{0}/'.format(index))
+    products_page = requests.get('https://www.homelegance.com/youth/page/{0}/'.format(index))
     product_tree = html.fromstring(products_page.content)
     products_on_page = len(product_tree.xpath('//*[@id="catList"]')[0])
     for index in range(1,products_on_page + 1):

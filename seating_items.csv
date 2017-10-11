@@ -14,11 +14,11 @@ dimensions,description,product_number,number
 36 x 36 x 34H,Armless Chair,8226DB,8226DB-AC
 36.5 x 36.5 x 34H,Corner Seat,8226DB,8226DB-CR
 36 x 36 x 17.75H,Ottoman,8226DB,8226DB-4
-76.5 x 32.5 x 33.5H,,8367CH-3,8367CH-3
-32.75 x 78 x 33.5H,,8367CH-3,8367CH-5
+76.5 x 32.5 x 33.5H," Reversible 3-Seater, Left/Right Unit ",8367CH-3,8367CH-3
+32.75 x 78 x 33.5H," Reversible Chaise, Left/Right Unit ",8367CH-3,8367CH-5
 37.5 x 26 x 18H,Ottoman,8367CH-3,8367CH-4
-76.5 x 32.5 x 33.5H,,8367TP-3,8367TP-3
-32.75 x 78 x 33.5H,,8367TP-3,8367TP-5
+76.5 x 32.5 x 33.5H," Reversible 3-Seater, Left/Right Unit ",8367TP-3,8367TP-3
+32.75 x 78 x 33.5H," Reversible Chaise, Left/Right Unit ",8367TP-3,8367TP-5
 37.5 x 26 x 18H,Ottoman,8367TP-3,8367TP-4
 84 x 107 x 35H,Reversible Sectional,8202CH-SC,8202CH-SC
 72 x 32 x 35H,Sofa,8202CH-3,8202CH-3
@@ -110,11 +110,15 @@ dimensions,description,product_number,number
 88.5 x 36.25 x 35.75H,Sofa,8207-3,8207-3
 61.75 x 36.25 x 35.75H,Love Seat,8207-3,8207-2
 35 x 36.25 x 35.75H,Chair,8207-3,8207-1
-,,8245BR-3,8245BR-3SL
+," Sofa with Sleeper
+Sofa:  83 Ã 36 Ã 38H 
+Sleeper Mattress:  60 Ã 71.75 Ã 4.75H ",8245BR-3,8245BR-3SL
 83 x 36 x 38H,Sofa,8245BR-3,8245BR-3
 57 x 36 x 38H,Love Seat,8245BR-3,8245BR-2
 36 x 36 x 38H,Chair,8245BR-3,8245BR-1
-,,8245GY-3,8245GY-3SL
+," Sofa with Sleeper
+Sofa:  83 Ã 36 Ã 38H 
+Sleeper Mattress:  60 Ã 71.75 Ã 4.75H ",8245GY-3,8245GY-3SL
 83 x 36 x 38H,Sofa,8245GY-3,8245GY-3
 57 x 36 x 38H,Love Seat,8245GY-3,8245GY-2
 36 x 36 x 38H,Chair,8245GY-3,8245GY-1
@@ -156,7 +160,8 @@ dimensions,description,product_number,number
 76.75 x 39 x 39.5H,Double Reclining Love Seat with Center Console,8200BRW-3,8200BRW-2
 42 x 39 x 39.5H,Glider Reclining Chair,8200BRW-3,8200BRW-1
 88 x 39 x 39.5H,Power Double Reclining Sofa,8200BRW-3PW,8200BRW-3PW
-, POWER Double Reclining Love Seat with Center Console ,8200BRW-3PW,8200BRW-2PW
+," POWER Double Reclining Love Seat with Center Console 
+ 76.75 Ã 39 Ã 39.5H ",8200BRW-3PW,8200BRW-2PW
 42 x 39 x 39.5H,Power Reclining Chair,8200BRW-3PW,8200BRW-1PW
 89 x 40.5 x 41.75H,Power Double Reclining Sofa,8399-3PW,8399-3PW
 89 x 40.5 x 41.75H,Double Reclining Sofa,8399-3PW,8399-3
@@ -188,8 +193,8 @@ dimensions,description,product_number,number
 81.5 x 39 x 39H,Double Reclining Sofa with Center Drop-Down Cup Holders,8201BLK-3,8201BLK-3
 72.5 x 39 x 39H,Double Glider Reclining Love Seat with Center Console,8201BLK-3,8201BLK-2
 35.5 x 39 x 39H,Glider Reclining Chair,8201BLK-3,8201BLK-1
-86.5 x 40.25 x 40.25H,,8206NF-3,8206NF-3
-76 x 40.25 x 40.25H,,8206NF-3,8206NF-2
+86.5 x 40.25 x 40.25H," Double Reclining Sofa with Center Drop-Down Cup holders, Receptacles and Hidden Drawer",8206NF-3,8206NF-3
+76 x 40.25 x 40.25H, Double Glider Reclining Love Seat with Center Console and Receptacles ,8206NF-3,8206NF-2
 45 x 40.25 x 40.25H,Glider Reclining Chair,8206NF-3,8206NF-1
 86.5 x 40.25 x 40.25H,Double Reclining Sofa with Center Drop-Down Cup Holders,8206BRW-3,8206BRW-3
 76 x 40.25 x 40.25H,Double Glider Reclining Love Seat with Center Console,8206BRW-3,8206BRW-2
@@ -241,15 +246,18 @@ dimensions,description,product_number,number
 87.5 x 38.5 x 39.5H,Double Reclining Sofa,8230BLK-3,8230BLK-3
 78.5 x 38.5 x 39.5H,Double Glider Reclining Love Seat with Center Console,8230BLK-3,8230BLK-2
 42.5 x 38.5 x 39.5H,Glider Reclining Chair,8230BLK-3,8230BLK-1
-,,8480RED-2LCN,8480RED-2LCN
+," Left Side Reclining Love Seat 
+with Center Console:  69 x 40.5 x 39H ",8480RED-2LCN,8480RED-2LCN
 59.5 x 40.5 x 39H,Right Side Reclining Love Seat,8480RED-2LCN,8480RED-2R
 22 x 40.5 x 39H,Armless Reclining Chair,8480RED-2LCN,8480RED-AR
 68.5 x 43 x 39H,Corner Seat,8480RED-2LCN,8480RED-CR
-,,8480GRY-2LCN,8480GRY-2LCN
+," Left Side Reclining Love Seat 
+with Center Console:  69 x 40.5 x 39H ",8480GRY-2LCN,8480GRY-2LCN
 59.5 x 40.5 x 39H,Right Side Reclining Love Seat,8480GRY-2LCN,8480GRY-2R
 22 x 40.5 x 39H,Armless Reclining Chair,8480GRY-2LCN,8480GRY-AR
 68.5 x 43 x 39H,Corner Seat,8480GRY-2LCN,8480GRY-CR
-,,8480BRW-2LCN,8480BRW-2LCN
+," Left Side Reclining Love Seat 
+with Center Console:  69 x 40.5 x 39H ",8480BRW-2LCN,8480BRW-2LCN
 59.5 x 40.5 x 39H,Right Side Reclining Love Seat,8480BRW-2LCN,8480BRW-2R
 22 x 40.5 x 39H,Armless Reclining Chair,8480BRW-2LCN,8480BRW-AR
 68.5 x 43 x 39H,Corner Seat,8480BRW-2LCN,8480BRW-CR
@@ -262,7 +270,8 @@ dimensions,description,product_number,number
 32.25 x 36.5 x 39.5H,Power Left Side Reclining Chair,8308,8308-LCPW
 32.25 x 36.5 x 39.5H,Power Right Side Reclining Chair,8308,8308-RCPW
 109.5 x 36.75 x 39.5H,Power Double Reclining Sofa,8318-3PW,8318-3PW
-,,8318-3PW,8318-2CNPW
+," POWER Double Reclining 
+Love Seat with Center Console:  92 x 36.75 x 39.5H ",8318-3PW,8318-2CNPW
 41.25 x 36.75 x 39.5H,Power Reclining Chair,8318-3PW,8318-1PW
 78 x 58 x 34.5H,Reversible Sofa Chaise,9789CF-3LC,9789CF-3LC
 47.5 x 24 x 18.5H,Ottoman,9789CF-3LC,9789CF-4
@@ -359,9 +368,9 @@ dimensions,description,product_number,number
 64.5 x 40 x 39.5H,Corner Seat,8318-AC,8318-CR
 39.5 x 36.75 x 39.5H,Power Left Side Reclining Chair,8318-AC,8318-LRPW
 39.5 x 36.75 x 39.5H,Power Right Side Reclining Chair,8318-AC,8318-RRPW
-21.75 x 21.75 x 20.25H,,4690-F2,4690-F2
-21.75 x 21.75 x 20.25H,,4690-F2,4690-F3
-21.75 x 21.75 x 20.25H,,4690-F2,4690-F4
+21.75 x 21.75 x 20.25H," Ottoman, Beige ",4690-F2,4690-F2
+21.75 x 21.75 x 20.25H," Ottoman, Indigo ",4690-F2,4690-F3
+21.75 x 21.75 x 20.25H," Ottoman, Dark Grey ",4690-F2,4690-F4
 88 x 40 x 39H,Power Double Reclining Sofa,8480BRW-3,8480BRW-3PW
 88 x 40 x 39H,Double Reclining Sofa,8480BRW-3,8480BRW-3
 65 x 40 x 39H,Power Double Reclining Love Seat,8480BRW-3,8480BRW-2PW
@@ -380,9 +389,12 @@ dimensions,description,product_number,number
 65 x 40 x 39H,Double Reclining Love Seat,8480GRY-3,8480GRY-2
 42 x 40 x 39H,Power Reclining Chair,8480GRY-3,8480GRY-1PW
 42 x 40 x 39H,Glider Reclining Chair,8480GRY-3,8480GRY-1
-,,8444BLK-3PW,8444BLK-3PW
-, Power Double Reclining Love Seat ,8444BLK-3PW,8444BLK-2PW
-, Power Reclining Chair ,8444BLK-3PW,8444BLK-1PW
+," POWER Double Reclining Sofa with Drop-Down Cup Holders, 
+Reading Lights, Receptacles and Magazine Bag:  83.5 x 40 x 41.25 - 45.25H ",8444BLK-3PW,8444BLK-3PW
+," Power Double Reclining Love Seat 
+ 60 x 40 x 41.25 - 45.25H ",8444BLK-3PW,8444BLK-2PW
+," Power Reclining Chair 
+  37.75 Ã 40 Ã 41.25H - 45.25H ",8444BLK-3PW,8444BLK-1PW
 79 x 36.5 x 39.5H,Double Reclining Sofa,8325BLK-3,8325BLK-3
 59 x 36.5 x 39.5H,Double Reclining Love Seat,8325BLK-3,8325BLK-2
 38.5 x 36.5 x 39.5H,Reclining Chair,8325BLK-3,8325BLK-1
@@ -398,9 +410,12 @@ dimensions,description,product_number,number
 87.75 x 36.5 x 39.5H,Power Double Reclining Sofa,8308-3PW,8308-3PW
 64.5 x 36.5 x 39.5H,Power Double Reclining Love Seat,8308-3PW,8308-2PW
 41.25 x 36.5 x 39.5H,Power Reclining Chair,8308-3PW,8308-1PW
-,,8300-3PW,8300-3PW
-,,8300-3PW,8300-2PW
-,,8300-3PW,8300-1PW
+," POWER Double Reclining Sofa 
+ 78.75 Ã 41 Ã 30 - 37.5H ",8300-3PW,8300-3PW
+," POWER Double Reclining Love Seat 
+ 64.5 Ã 41 Ã 30 - 37.5H ",8300-3PW,8300-2PW
+," POWER Reclining Chair 
+ 41.25 Ã 41 Ã 30 - 37.5H ",8300-3PW,8300-1PW
 84.25 x 36 x 36.5H,Sofa,9734TP-3,9734TP-3
 63 x 36 x 36.5H,Love Seat,9734TP-3,9734TP-2
 40.5 x 36 x 36.5H,Chair,9734TP-3,9734TP-1
@@ -420,10 +435,10 @@ dimensions,description,product_number,number
 62 x 37.5 x 38.5H,Power Double Reclining Love Seat,9700BLK-3PW,9700BLK-2PW
 38 x 37.5 x 38.5H,Power Reclining Chair,9700BLK-3PW,9700BLK-1PW
 90 x 38.5 x 40H,Power Double Reclining Sofa,9668BRW-3PW,9668BRW-3PW
-83 x 38.5 x 40H,,9668BRW-3PW,9668BRW-2PW
+83 x 38.5 x 40H, POWER Double Reclining Love Seat with Center Console ,9668BRW-3PW,9668BRW-2PW
 42 x 38.5 x 40H,Power Reclining Chair,9668BRW-3PW,9668BRW-1PW
 90 x 38.5 x 40H,Power Double Reclining Sofa,9668BLK-3PW,9668BLK-3PW
-83 x 38.5 x 40H,,9668BLK-3PW,9668BLK-2PW
+83 x 38.5 x 40H, POWER Double Reclining Love Seat with Center Console ,9668BLK-3PW,9668BLK-2PW
 42 x 38.5 x 40H,Power Reclining Chair,9668BLK-3PW,9668BLK-1PW
 85.75 x 35 x 36.25H,Sofa,8579DB-3,8579DB-3
 63 x 35 x 36.25H,Love Seat,8579DB-3,8579DB-2
@@ -451,7 +466,9 @@ dimensions,description,product_number,number
 53 x 38.5 x 39H,Right Side Reclining Love Seat,8411,8411-2R
 66 x 38.5 x 39H,Right Side Reclining Love Seat with Center Console,8411,8411-2RCN
 59 x 40 x 39H,Corner Seat,8411,8411-CR
-,,8405BJ-3,8405BJ-3SL
+," Sofa with Sleeper 
+Sofa:  90 x 36.5 x 36.25H 
+Sleeper Mattress:  60 x 71.75 x 4.75H ",8405BJ-3,8405BJ-3SL
 90 x 36.5 x 36.25H,Sofa,8405BJ-3,8405BJ-3
 68 x 36.5 x 36.25H,Love Seat,8405BJ-3,8405BJ-2
 45 x 36.5 x 36.25H,Chair,8405BJ-3,8405BJ-1
@@ -459,8 +476,8 @@ dimensions,description,product_number,number
 81 x 38 x 38.5H,Double Reclining Sofa with Center Drop-Down Cup Holders,8403-3,8403-3
 61 x 38 x 38.5H,Double Reclining Love Seat,8403-3,8403-2
 39.5 x 38 x 38.5H,Reclining Chair,8403-3,8403-1
-30.5 x 34.5 x 39.75H,,1234-1,1234-1
-32 x 25.5 x 20.25H,,1234-1,1234-4
+30.5 x 34.5 x 39.75H," Accent Chair, Show Wood ",1234-1,1234-1
+32 x 25.5 x 20.25H," Ottoman, Show Wood ",1234-1,1234-4
 78 x 33 x 32.5H,Sofa,8518,8518-3
 56 x 33 x 32.5H,Love Seat,8518,8518-2
 33 x 33 x 32.5H,Chair,8518,8518-1
@@ -489,12 +506,18 @@ dimensions,description,product_number,number
 90 x 40 x 40H,Double Reclining Sofa,9636-3,9636-3
 79 x 40 x 40H,Doble Glider Reclining Love Seat with Center Console,9636-3,9636-2
 43 x 40 x 40H,Glider Reclining Chair,9636-3,9636-1
-, Double Reclining Sofa ,8524RD,8524RD-3
-, Double Glider Reclining Love Seat with Center Console ,8524RD,8524RD-2
-, Glider Reclining Chair ,8524RD,8524RD-1
-, Double Reclining Sofa ,8524BK,8524BK-3
-, Glider Reclining Chair ,8524BK,8524BK-1
-, Double Glider Reclining Love Seat with Center Console ,8524BK,8524BK-2
+," Double Reclining Sofa 
+ 86 Ã 36.5 Ã 40.5 - 46.5H ",8524RD,8524RD-3
+," Double Glider Reclining Love Seat with Center Console 
+ 77 Ã 36.5 Ã 40.5 - 46.5H ",8524RD,8524RD-2
+," Glider Reclining Chair 
+ 39 Ã 36.5 Ã 40.5 - 46.5H ",8524RD,8524RD-1
+," Double Reclining Sofa 
+ 86 Ã 36.5 Ã 40.5 - 46.5H ",8524BK,8524BK-3
+," Glider Reclining Chair 
+ 39 Ã 36.5 Ã 40.5 - 46.5H ",8524BK,8524BK-1
+," Double Glider Reclining Love Seat with Center Console 
+ 77 Ã 36.5 Ã 40.5 - 46.5H ",8524BK,8524BK-2
 79 x 33 x 35H,Sofa,9639,9639-3
 57 x 33 x 35H,Love Seat,9639,9639-2
 36 x 33 x 35H,Chair,9639,9639-1
@@ -514,12 +537,18 @@ dimensions,description,product_number,number
 63 x 40.5 x 39H,Corner Seat,9600,9600-CR
 23 x 37 x 39H,Armless Chair,9600,9600-AC
 57 x 37 x 39H,Right Side Reclining Love Seat,9600,9600-2R
-, Sofa ,9603WHT,9603WHT-3
-, Love Seat ,9603WHT,9603WHT-2
-, Chair ,9603WHT,9603WHT-1
-, Sofa ,9603BLK,9603BLK-3
-, Love Seat ,9603BLK,9603BLK-2
-, Chair ,9603BLK,9603BLK-1
+," Sofa 
+ 86 Ã 40 Ã 30 - 38H ",9603WHT,9603WHT-3
+," Love Seat 
+ 70 Ã 40 Ã 30 - 38H ",9603WHT,9603WHT-2
+," Chair 
+ 48 Ã 40 Ã 30 - 38H ",9603WHT,9603WHT-1
+," Sofa 
+ 86 Ã 40 Ã 30 - 38H ",9603BLK,9603BLK-3
+," Love Seat 
+ 70 Ã 40 Ã 30 - 38H ",9603BLK,9603BLK-2
+," Chair 
+ 48 Ã 40 Ã 30 - 38H ",9603BLK,9603BLK-1
 91.5 x 38.5 x 39H,Double Reclining Sofa,9778BLK,9778BLK-3
 68 x 38.5 x 39H,Double Reclining Love Seat,9778BLK,9778BLK-2
 44 x 38.5 x 39H,Glider Reclining Chair,9778BLK,9778BLK-1
@@ -538,29 +567,29 @@ dimensions,description,product_number,number
 39 x 39 x 40H,"Power Reclining Chair with Massage, LED & Cup Cooler",9745BRW-1,9745BRW-1
 35 x 37 x 40H,Power Lift Chair,9769BR,9769BR-1LT
 35 x 37 x 40H,Power Lift Chair,9769,9769-1LT
+84.25 x 36 x 36.5H,Sofa,9734BR-3,9734BR-3
+63 x 36 x 36.5H,Love Seat,9734BR-3,9734BR-2
+40.5 x 36 x 36.5H,Chair,9734BR-3,9734BR-1
 70 x 39.5 x 40H,Left Side 2-Seater,9739,9739-L
 38 x 69 x 40H,Right Side Chaise,9739,9739-R
 67 x 29.5 x 22.5H,Ottoman,9739,9739-4
 84.25 x 33.75 x 36.5H,Sofa,9734CH-3,9734CH-3
 63 x 36 x 36.5H,Love Seat,9734CH-3,9734CH-2
 40.5 x 36 x 36.5H,Chair,9734CH-3,9734CH-1
-84.25 x 36 x 36.5H,Sofa,9734BR-3,9734BR-3
-63 x 36 x 36.5H,Love Seat,9734BR-3,9734BR-2
-40.5 x 36 x 36.5H,Chair,9734BR-3,9734BR-1
-82 x 32 x 34.5H,Sofa,9701BLK,9701BLK-3
-60 x 32 x 34.5H,Love Seat,9701BLK,9701BLK-2
-37 x 32 x 34.5H,Chair,9701BLK,9701BLK-1
 83 x 37.5 x 38.5H,Double Reclining Sofa,9700BLK-3,9700BLK-3
 62 x 37.5 x 38.5H,Double Reclining Love Seat,9700BLK-3,9700BLK-2
 38 x 37.5 x 38.5H,Reclining Chair,9700BLK-3,9700BLK-1
 83 x 37.5 x 38.5H,Double Reclining Sofa,9700BRW-3,9700BRW-3
 62 x 37.5 x 38.5H,Double Reclining Love Seat,9700BRW-3,9700BRW-2
 38 x 37.5 x 38.5H,Reclining Chair,9700BRW-3,9700BRW-1
-78 x 34 x 36H,,9909BR,9909BR-3
-84 x 34 x 36H,,9909BR,9909BR-5
+82 x 32 x 34.5H,Sofa,9701BLK,9701BLK-3
+60 x 32 x 34.5H,Love Seat,9701BLK,9701BLK-2
+37 x 32 x 34.5H,Chair,9701BLK,9701BLK-1
+78 x 34 x 36H," Reversible 3-Seater, Left/Right Unit ",9909BR,9909BR-3
+84 x 34 x 36H," Reversible Chaise, Left/Right Unit ",9909BR,9909BR-5
 37.5 x 26 x 20H,Ottoman,9909BR,9909BR-4
-78 x 34 x 36H,,9909CH,9909CH-3
-84 x 34 x 36H,,9909CH,9909CH-5
+78 x 34 x 36H," Reversible 3-Seater, Left/Right Unit ",9909CH,9909CH-3
+84 x 34 x 36H," Reversible Chaise, Left/Right Unit ",9909CH,9909CH-5
 37.5 x 26 x 20H,Ottoman,9909CH,9909CH-4
 32.5 Dia x 30H,Swivel Chair,1200BRW,1200BRW
 32.5 Dia x 30H,Swivel Chair,1200BLK,1200BLK
@@ -569,6 +598,10 @@ dimensions,description,product_number,number
 29.5 x 31.5 x 37.5H,Accent Chair,1195F1S,1195F1S
 28 x 30 x 37.5H,Accent Chair,1279F3S,1279F3S
 28 x 30 x 37.5H,Accent Chair,1279F2S,1279F2S
+31 x 30.5 x 31.5H,Accent Chair,1192RN,1192RN
+31 x 30.5 x 31.5H,Accent Chair,1192GY,1192GY
+31 x 30.5 x 31.5H,Accent Chair,1192BL,1192BL
+31 x 30.5 x 31.5H,Accent Chair,1192BE,1192BE
 29 x 31.5 x 34.25H,Accent Chair,1280GY,1280GY
 29 x 31.5 x 34.25H,Accent Chair,1280BL,1280BL
 29 x 31.5 x 34.25H,Accent Chair,1280BE,1280BE
@@ -577,7 +610,9 @@ dimensions,description,product_number,number
 28 x 30.25 x 34.75H,Accent Chair,1194TP,1194TP
 28 x 30.25 x 34.75H,Accent Chair,1194IN,1194IN
 31.5 x 34 x 44.25H,Accent Chair with 1 Kidney Pillow,1217F2S,1217F2S
-,,1267GY,1267GY
+," Swivel Chair and Ottoman 
+Chair:  33.75 Ã 30.75 Ã 40.5 
+Ottoman:  21 Ã 15.5 Ã 17H ",1267GY,1267GY
 29 x 36 x 40H,Push Back Reclining Chair,8347BE-1,8347BE-1
 30 x 37 x 40H,Push Back Reclining Chair,8348BL-1,8348BL-1
 28.75 x 35.5 x 40H,Push Back Reclining Chair,8214BRW-1,8214BRW-1
@@ -590,9 +625,9 @@ dimensions,description,product_number,number
 31 x 35.75 x 42.25H,Power Lift Chair,8222-1LT,8222-1LT
 82 x 58.5 x 36.5H,Reversible Sofa Chaise,8209BR-3SC,8209BR-3SC
 82 x 58.5 x 36.5H,Reversible Sofa Chaise,8208-3SC,8208-3SC
-98 x 65.5 x 39H,,8228TP,8228TP
-98 x 65.5 x 39H,,8228BU,8228BU
-99 x 59 x 35.25H,,8211,8211
+98 x 65.5 x 39H, Sectional with Pull-out Bed and Hidden Storage ,8228TP,8228TP
+98 x 65.5 x 39H, Sectional with Pull-out Bed and Hidden Storage ,8228BU,8228BU
+99 x 59 x 35.25H, Reversible Sectional with Pull-out Bed and Hidden Storage ,8211,8211
 47 x 24 x 17H,Cocktail Table,8219-30,8219-30
 46 x 23.5 x 19H,Ottoman,8337FA-3,8337FA-4
 30 x 33.75 x 37H,Accent Chair,8327GY-1S,8327GY-1S
@@ -616,17 +651,19 @@ dimensions,description,product_number,number
 38 x 38 x 19.25H,Ottoman,8335-4,8335-4
 36.25 x 36.25 x 18.25H,Ottoman,8324-4,8324-4
 44.5 x 19 x 18.75H,Lift Top Storage Bench,4741FA,4741FA
-21 x 25 x 34.5H,,1255F1S,1255F1S
+21 x 25 x 34.5H," Accent Chair, Two-Tone ",1255F1S,1255F1S
 20 x 25 x 36H,Accent Chair,1249F1S,1249F1S
-32.75 x 33 x 35H,,1233TL,1233TL
-32.75 x 33 x 35H,,1233RN,1233RN
-32.75 x 33 x 35H,,1233MD,1233MD
-32.75 x 33 x 35H,,1233GY,1233GY
+32.75 x 33 x 35H," Accent Chair, Teal ",1233TL,1233TL
+32.75 x 33 x 35H," Accent Chair, Orange ",1233RN,1233RN
+32.75 x 33 x 35H," Accent Chair, Mustard ",1233MD,1233MD
+32.75 x 33 x 35H," Accent Chair, Grey ",1233GY,1233GY
 35 x 36.75 x 41.25H,Power Lift Chair,8437-1LT,8437-1LT
 29.75 x 38 x 41H,Reclining Chair,8404TP-1,8404TP-1
 29.75 x 38 x 41H,Reclining Chair,8404DB-1,8404DB-1
 80 x 58.5 x 36.5H,Reversible Sofa Chaise,8401-3SC,8401-3SC
-,,4829LN,4829LN
+,"Elegant Lounger 
+Sofa:  82.5 x 32 x 34.75H 
+Bed:  82.5 x 43 x 24H ",4829LN,4829LN
 31.5 x 31 x 47.5H,Accent Chair,8412-1,8412-1
 26 x 23 x 30H,Accent Chair,1191F6S,1191F6S
 26 x 23 x 30H,Accent Chair,1191F5S,1191F5S
@@ -643,12 +680,18 @@ dimensions,description,product_number,number
 32 x 32.5 x 37.25H,Accent Chair with 1 Kidney Pillow,1216f1s_2014S-127,1216F1S
 30.75 x 37.5 x 41H,Power Lift Chair,8545-1LT,8545-1LT
 31 x 35.5 x 41H,Power Lift Chair,8509-1LT,8509-1LT
-,,8555WHT-1,8555WHT-1
-,,8555BLK-1,8555BLK-1
-,,8548BLK-1,8548BLK-1
-,,8548BRW-1,8548BRW-1
-,,4838,4838
-,,4829DB,4829DB
-,,4823GP,4823GP
-,,4823BR,4823BR
-,,4809CH,4809CH
+," Swivel Reclining Chair with Ottoman 
+Chair:  25 x 28.5 x 45H 
+Ottoman:  18 x 17 x 15.5H ",8555WHT-1,8555WHT-1
+," Swivel Reclining Chair with Ottoman 
+Chair:  25 x 28.5 x 45H 
+Ottoman:  18 x 17 x 15.5H ",8555BLK-1,8555BLK-1
+," Swivel Reclining Chair with Ottoman 
+Chair:  32 x 35.5 x 43H 
+Ottoman::  19.75 x 19 x 18H ",8548BLK-1,8548BLK-1
+," Swivel Reclining Chair with Ottoman 
+Chair:  32 x 35.5 x 43H 
+Ottoman:  19.75 x 19 x 18H ",8548BRW-1,8548BRW-1
+,"Elegant Lounger 
+Sofa:  82.5 x 32 x 34.75H 
+Bed:  82.5 x 68 x 25.5H ",4838,4838

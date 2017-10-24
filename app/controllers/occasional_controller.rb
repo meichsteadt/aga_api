@@ -13,7 +13,7 @@ class OccasionalController < ApplicationController
     pagenumber = params[:id].to_i
     min = (pagenumber - 1) * 6
     max = min + 6
-    @products = Product.where(category: "occasional")[min...max]
+    @products = Product.where(category: "occasional").sort_by {|prod| prod.number}[min...max]
     render json: @products
   end
 

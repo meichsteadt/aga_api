@@ -13,7 +13,7 @@ class BedroomController < ApplicationController
     pagenumber = params[:id].to_i
     min = (pagenumber - 1) * 6
     max = min + 6
-    @products = Product.where(category: "bedroom")[min...max]
+    @products = Product.where(category: "bedroom").sort_by {|prod| prod.number}[min...max]
     render json: @products
   end
 

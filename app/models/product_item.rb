@@ -185,10 +185,20 @@ class ProductItem < ApplicationRecord
   end
 
   def youth_prices
+    prefix = self.number.split("-").first
     price = Price.find_by_number(self.number)
-    if price
-      self.update(price: price.price.to_f)
+    if self.number[-1] == "1" && price != nil
+      price = Price.find_by_number(self.number).price
+      if Price.find_by_number(prefix + "-3")
+        price += Price.find_by_number(prefix + "-3").price
+      end
+    else
+      price = Price.find_by_number(self.number)
+      if price
+        price = Price.find_by_number(self.number).price
+      end
     end
+    self.update(price: price)
   end
 
   def self.check_prices
@@ -210,5 +220,25 @@ class ProductItem < ApplicationRecord
         writer << [item.number, item.price]
       end
     end
+  end
+
+  def self.manual_prices
+    csv_text = File.read("manual_prices.csv")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      ProductItem.find_by_number(row["number"]).update(price: row['price'])
+    end
+  end
+
+  def self.check_duplicates
+    items = []
+    returned = []
+    ProductItem.all.sort_by {|item| item.number}.each {|item| items.push({number: item.number, product: Product.find(item.product_id)})}
+    items.each do |item|
+      if items.count(item) > 1
+        returned.push(item[:product].id)
+      end
+    end
+    returned
   end
 end

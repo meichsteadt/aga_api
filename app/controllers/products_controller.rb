@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     if params[:user_id]
       show_user_products(params)
     else
-      render json: {"product": @product, "product_items": @product.product_items.sort_by! {|item| item.price}}
+      render json: {"product": @product, "product_items": @product.product_items}
     end
   end
 

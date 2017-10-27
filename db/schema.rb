@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026074901) do
+ActiveRecord::Schema.define(version: 20171027085135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,15 +59,15 @@ ActiveRecord::Schema.define(version: 20171026074901) do
   create_table "users", force: :cascade do |t|
     t.string   "login"
     t.string   "password_digest"
-    t.float    "bedroom_mult"
-    t.float    "dining_mult"
-    t.float    "seating_mult"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.float    "bedroom_mult",    default: 2.0
+    t.float    "dining_mult",     default: 2.0
+    t.float    "seating_mult",    default: 2.0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "auth_token"
-    t.float    "youth_mult"
-    t.float    "occasional_mult"
-    t.float    "home_mult"
+    t.float    "youth_mult",      default: 2.0
+    t.float    "occasional_mult", default: 2.0
+    t.float    "home_mult",       default: 2.0
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
   end
 

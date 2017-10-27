@@ -7,8 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:4200'
-    # origins 'https://homelegance-kiosk.firebaseapp.com'
+    origins 'http://localhost:4200, https://homelegance-kiosk.firebaseapp.com'
 
     resource '*',
       headers: :any,

@@ -14,7 +14,7 @@ class EmailsController < ApplicationController
     @email = @user.emails.new(email_params)
     @email.product_number = Product.find(@email.product_id).number
     if @email.save
-      ProductMailer.email_product(@email.email_address, @email.product_id).deliver_now!
+      ProductMailer.email_product(@email.email_address, @email.product_id).deliver_now
       render json: @email, status: :created, location: @email
     else
       render json: @email.errors, status: :unprocessable_entity

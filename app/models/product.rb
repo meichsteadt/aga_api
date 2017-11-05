@@ -59,6 +59,10 @@ class Product < ApplicationRecord
     end
   end
 
+  def set_thumbnail
+    self.update(thumbnail: self.images[0].gsub("homelegance", "homelegance-resized"))
+  end
+
   def self.update_files
     `python bedroom_scraper.py`
     `python bedroom_items_scraper.py`

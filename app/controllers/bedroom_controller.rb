@@ -4,7 +4,6 @@ class BedroomController < ApplicationController
   # GET /products
   def index
     @products = Product.where(category: "bedroom")
-
     render json: @products
   end
 
@@ -12,9 +11,13 @@ class BedroomController < ApplicationController
   def show
     pagenumber = params[:id].to_i
     min = (pagenumber - 1) * 6
-    max = min + 6
-    @products = Product.where(category: "bedroom").sort_by {|prod| prod.number}[min...max]
-    render json: @products
+    max = min + 5
+    @products = Product.where(category: "bedroom")
+    if params[:user_id]
+      sort_by = User.find(params[:user_id]).sort_by
+      sort_by == "price"? @products = @products.order(avg_price: :desc) : @products = @products.order(popularity: :desc)
+    end
+    render json: @products[min..max]
   end
 
   private

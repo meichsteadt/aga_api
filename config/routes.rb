@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/:login/:password', to: "users#show"
+  # get 'users/:login/:password', to: "users#show"
   resources :users do
-    resources :products
+    resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home
   end
   resources :emails
-  resources :product_items, :dining, :seating, :bedroom, :products, :youth, :occasional, :home
+  resources :product_items, :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches
 
   scope :format => true, :constraints => { :format => 'json' } do
     post   "/login"       => "sessions#create"

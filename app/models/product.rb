@@ -1,6 +1,7 @@
 require 'csv'
 class Product < ApplicationRecord
   has_many :product_items
+  has_and_belongs_to_many :sub_categories, unique: true
 
   def get_related_products
     if self.number[/([0-9]+)/]

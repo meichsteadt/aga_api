@@ -1,6 +1,4 @@
 class DiningController < ApplicationController
-  before_action :set_product, only: [:show]
-
   # GET /products
   def index
     @products = Product.where(category: "dining")
@@ -23,10 +21,4 @@ class DiningController < ApplicationController
     end
     render json: @products[min..max]
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find_by_number(params[:id])
-    end
 end

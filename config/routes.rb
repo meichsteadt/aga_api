@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   resources :emails
   resources :product_items, :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches
+  get 'sub_categories/:category', to: 'sub_categories#show'
+  resources :sub_categories
 
   scope :format => true, :constraints => { :format => 'json' } do
     post   "/login"       => "sessions#create"

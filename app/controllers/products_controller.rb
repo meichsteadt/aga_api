@@ -3,12 +3,9 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    pagenumber = params[:page_number].to_i
-    min = (pagenumber - 1) * 6
-    max = min + 5
     if params[:sub_category]
-      if SubCategory.find_by_name(params[:sub_category])
-        @products = SubCategory.find_by_name(params[:sub_category]).products
+      if SubCategory.where("lower(name) LIKE ?", params[:sub_category])
+        @products = SubCategory.where("lower(name) LIKE ?", params[:sub_category]).first.products
       end
     else
       @products = Product.all
@@ -17,7 +14,14 @@ class ProductsController < ApplicationController
       sort_by = User.find(params[:user_id]).sort_by
       sort_by == "price"? @products = @products.order(avg_price: :desc) : @products = @products.order(popularity: :desc)
     end
-    render json: @products[min..max]
+    if params[:page_number]
+      pagenumber = params[:page_number].to_i
+      min = (pagenumber - 1) * 6
+      max = min + 5
+      render json: {"products": @products[min..max], "pages": @products.length}
+    else
+      render json: {"products": @products, "pages": @products.length}
+    end
   end
 
   # GET /products/1
@@ -42,7 +46,11 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       multiplier = @user.multiplier(@product.category)
       @product.product_items.each do |item|
-        item.price = item.price * multiplier
+        unless multiplier.nil?
+          item.price = item.price * multiplier
+        else
+          item.price = nil
+        end
         product_items.push(item)
       end
       render json: {"product": @product, "product_items": product_items.sort_by {|item| item.price}.reverse}

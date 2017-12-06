@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
         unless multiplier.nil?
           item.price = item.price * multiplier
           if @user.round
-            item.price = (((item.price/10).ceil) *10 )-1
+            item.price = (((item.price/10.0).ceil) *10 )-1
           end
         else
           item.price = nil

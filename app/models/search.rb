@@ -9,7 +9,7 @@ class Search
       end
     end
     if user_id
-      @products.sort_by! {|prod| prod.avg_price}
+      @products.sort_by! {|prod| prod.avg_price}.reverse!
     end
     if page_number
       pagenumber = page_number.to_i

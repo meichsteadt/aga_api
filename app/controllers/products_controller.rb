@@ -4,15 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     if params[:sub_category]
-      if SubCategory.where("lower(name) LIKE ?", params[:sub_category])
-        @products = SubCategory.where("lower(name) LIKE ?", params[:sub_category]).first.products
+      if SubCategory.find(params[:sub_category])
+        @products = SubCategory.find(params[:sub_category]).products
       end
     else
       @products = Product.all
     end
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
-      sort_by == "price"? @products = @products.order(avg_price: :desc) : @products = @products.order(popularity: :desc)
+      sort_by == "price"? @products = @products.order(avg_price: :desc, name: :asc, number: :asc) : @products = @products.order(popularity: :desc, name: :asc, number: :asc)
     end
     if params[:page_number]
       pagenumber = params[:page_number].to_i

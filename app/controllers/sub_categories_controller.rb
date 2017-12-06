@@ -15,9 +15,9 @@ class SubCategoriesController < ApplicationController
         min = (params[:page_number].to_i - 1) * 6
         max = min + 4
       end
-      @sub_categories = SubCategory.where(parent_category: @category).sort[min..max]
+      @sub_categories = SubCategory.where(parent_category: @category).sort_by {|cat| cat.products.length}.reverse[min..max]
     else
-      @sub_categories = SubCategory.where(parent_category: @category).sort
+      @sub_categories = SubCategory.where(parent_category: @category).sort_by {|cat| cat.products.length}.reverse
     end
     render json: {"sub_categories": @sub_categories, "pages": SubCategory.where(parent_category: @category).length}
   end

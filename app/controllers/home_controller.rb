@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @products = Product.where(category: "home")
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
-      sort_by == "price"? @products = @products.order(avg_price: :desc) : @products = @products.order(popularity: :desc)
+      sort_by == "price"? @products = @products.order(avg_price: :desc, name: :asc, number: :asc) : @products = @products.order(popularity: :desc, name: :asc, number: :asc)
     end
     render json: @products
   end
@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     @products = Product.where(category: "home")
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
-      sort_by == "price"? @products = @products.order(avg_price: :desc) : @products = @products.order(popularity: :desc)
+      sort_by == "price"? @products = @products.order(avg_price: :desc, name: :asc, number: :asc) : @products = @products.order(popularity: :desc, name: :asc, number: :asc)
     end
     render json: @products[min..max]
   end

@@ -64,6 +64,26 @@ class Product < ApplicationRecord
     self.update(thumbnail: self.images[0].gsub("homelegance", "homelegance-resized"))
   end
 
+  def self.get_avg_price
+    Product.all.each do |product|
+      sum = 0
+      product_items = product.product_items
+      product_items.each do |item|
+        price = item.price
+        if price == nil
+          price = 0
+        end
+        sum += price
+      end
+      if sum > 0
+        avg_price = sum/product_items.length
+      else
+        avg_price = 0
+      end
+      product.update(avg_price: avg_price)
+    end
+  end
+
   def self.update_files
     `python bedroom_scraper.py`
     `python bedroom_items_scraper.py`

@@ -48,6 +48,9 @@ class ProductsController < ApplicationController
       @product.product_items.each do |item|
         unless multiplier.nil?
           item.price = item.price * multiplier
+          if @user.round
+            item.price = (((item.price/10).ceil) *10 )-1
+          end
         else
           item.price = nil
         end

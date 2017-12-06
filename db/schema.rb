@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205214148) do
+ActiveRecord::Schema.define(version: 20171206053822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20171205214148) do
     t.float    "occasional_mult", default: 2.0
     t.float    "home_mult",       default: 2.0
     t.string   "sort_by",         default: "price"
+    t.boolean  "round",           default: false
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
   end
 

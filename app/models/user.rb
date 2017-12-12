@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_secure_token :auth_token
   has_many :emails
   validates :login, uniqueness: true
+  has_many :visits
 
   def invalidate_token
     self.update_columns(token: nil)
@@ -30,6 +31,13 @@ class User < ApplicationRecord
       return self.home_mult
     else
       return nil
+    end
+  end
+
+  def self.seed
+    users = []
+    User.all.each do |user|
+      users << JSON.parse(user.to_json)
     end
   end
 end

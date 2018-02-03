@@ -1,4 +1,6 @@
 require 'csv'
+require 'net/ftp'
+
 class ProductItem < ApplicationRecord
 
   def self.reset_prices

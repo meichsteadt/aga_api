@@ -1,5 +1,4 @@
 require 'csv'
-require 'net/ftp'
 
 class Product < ApplicationRecord
   has_many :product_items

@@ -1,7 +1,17 @@
 require 'csv'
+require 'net/ftp'
+
 class Product < ApplicationRecord
   has_many :product_items
   has_and_belongs_to_many :sub_categories, unique: true
+
+  def self.write
+    @output = {}
+    Product.all.each do |product|
+      @output[product.number] = {product: product, product_items: product.product_items}
+    end
+    File.open('product_output.json', 'w') {|file| file.write(@output.to_json)}
+  end
 
   def get_related_products
     if self.number[/([0-9]+)/]
@@ -95,4 +105,28 @@ class Product < ApplicationRecord
     `python youth_item_scraper.py`
   end
 
+  def self.write_file
+    products = []
+    product_items = []
+    Product.all.each do |product|
+      info = []
+      info << product.number
+      info << product.name
+      info << "Homelegance"
+      info << product.description
+      info << product.category
+      info << product['thumbnail']
+      products << info
+    end
+    CSV.open('products.csv', "w", write_headers: true, headers: ['number', 'name', 'brand', 'description', 'category', 'image']) do |csv|
+      products.each do |info|
+        csv << info
+      end
+    end
+    # CSV.open('product_items.csv', "w", write_headers: true, headers: ['produt_group_number', 'number','description', 'price', 'dimensions']) do |csv|
+    #   product_items.each do |pi|
+    #     csv << pi
+    #   end
+    # end
+  end
 end

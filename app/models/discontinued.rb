@@ -18,12 +18,18 @@ class Discontinued < ApplicationRecord
       end
     end
   end
-end
-orphan = []
-ProductItem.all.each do |item|
-  product = Product.where(id: item.product_id)
-  if product == []
-    orphan.push(item.number)
+
+  def self.bye
+    ds = CSV.open("ds.csv")
+    ds.each do |row|
+      if ProductItem.find_by_number(row[0])
+        ProductItem.find_by_number(row[0]).destroy
+      end
+    end
+    Product.all.each do |p|
+      if p.product_items.length == 0
+        p.destroy
+      end
+    end
   end
 end
-orphan

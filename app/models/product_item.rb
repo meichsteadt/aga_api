@@ -244,8 +244,7 @@ class ProductItem < ApplicationRecord
     returned
   end
 
-  def can_sell
-    json = JSON.parse(File.read('inventory.json'))
+  def get_inventory(json)
     qty = json[self.number]
     unless qty
       if self.number.split('-').last == "1CK"
@@ -258,8 +257,8 @@ class ProductItem < ApplicationRecord
   end
 
   def self.get_inventory
-    ftp = Net::FTP.new('207.140.24.85')
-    ftp.login('matt', 'matt2018')
+    ftp = Net::FTP.new(ENV['FTP_URL'])
+    ftp.login(ENV['FTP_LOGIN'], ENV['FTP_PASSWORD'])
 
     file_name = ftp.ls[0].split(" ").last
     ftp.get(file_name)
@@ -277,8 +276,18 @@ class ProductItem < ApplicationRecord
       end
       hash[row["model"]] = {current_can_sell_qty: current_can_sell_qty, confirmed: confirmed}
     end
-    File.open('inventory.json', 'w') do |f|
-      f.write(hash.to_json)
+    ProductItem.all.each do |pi|
+      inventory = pi.get_inventory(hash)
+      if inventory
+        can_sell_qty = inventory[:current_can_sell_qty].to_i
+        dates = inventory[:confirmed]
+        if dates.length > 0
+          confirmed = dates.first.first.to_date
+        else
+          confirmed = nil
+        end
+        pi.update(can_sell: can_sell_qty, confirmed: confirmed)
+      end
     end
   end
 end

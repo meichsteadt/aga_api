@@ -22,8 +22,8 @@ class Discontinued < ApplicationRecord
   def self.bye
     ds = CSV.open("ds.csv")
     ds.each do |row|
-      if ProductItem.find_by_number(row[0])
-        ProductItem.find_by_number(row[0]).destroy
+      ProductItem.where(number: row[0]).each do |pi|
+        pi.destroy
       end
     end
     Product.all.each do |p|

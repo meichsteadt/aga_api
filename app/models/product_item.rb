@@ -246,6 +246,9 @@ class ProductItem < ApplicationRecord
 
   def get_inventory(json)
     qty = json[self.number]
+    if json[self.number + "*"]
+      qty = json[self.number + "*"]
+    end
     unless qty
       if self.number.split('-').last == "1CK"
         return json[self.number.gsub('1CK', "1")]
@@ -260,7 +263,7 @@ class ProductItem < ApplicationRecord
     ftp = Net::FTP.new(ENV['FTP_URL'])
     ftp.login(ENV['FTP_LOGIN'], ENV['FTP_PASSWORD'])
 
-    file_name = ftp.ls[0].split(" ").last
+    file_name = ftp.ls[-1].split(" ").last
     ftp.get(file_name)
     file = JSON.parse(File.read(file_name))
     hash = {}

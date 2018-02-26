@@ -296,7 +296,8 @@ class ProductItem < ApplicationRecord
   end
 
   def get_price(user)
-    warehouse_id = user.warehouse_id
-    self.prices.find_by_warehouse_id(warehouse_id).amount
+    # warehouse_id = user.warehouse_id
+    # self.prices.find_by_warehouse_id(warehouse_id).amount
+    self.price
   end
 end

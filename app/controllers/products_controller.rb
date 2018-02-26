@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
         @products = SubCategory.find(params[:sub_category]).products
       end
     else
-      @products = Product.all
+      @products = Product.all.sort_by {|e| e.id}
     end
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
@@ -29,7 +29,40 @@ class ProductsController < ApplicationController
     if params[:user_id]
       show_user_products(params)
     else
-      render json: {"product": @product, "product_items": @product.product_items}
+      render json: {"product": @product, "product_items": @product.product_items }
+    end
+  end
+
+  def create
+    if authenticate(params)
+      @product = Product.new(product_params)
+      if @product.save!
+        @product.update(thumbnail: @product.images[0].gsbu('homelegance', 'homelegance-resized'))
+        if params[:product][:product_items]
+          product_item_params.each {|e| @product.product_items.create(e)}
+        end
+        render json: {"product": @product.as_json, "product_items": @product.product_items}
+      else
+        render json: {"message": "Something went wrong"}
+      end
+    else
+      render json: {"message": "Unauthenticated"}
+    end
+  end
+
+  def update
+    if authenticate(params)
+      @product = Product.find(params[:id])
+      if @product.update(product_params)
+        if params[:product][:product_items]
+          product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
+        end
+        render json: {"product": @product.as_json, "product_items": @product.product_items}
+      else
+        render json: {"message": "Something went wrong"}
+      end
+    else
+      render json: {"message": "Unauthenticated"}
     end
   end
 
@@ -47,7 +80,7 @@ class ProductsController < ApplicationController
       multiplier = @user.multiplier(@product.category)
       @product.product_items.each do |item|
         unless multiplier.nil?
-          item.price = item.price * multiplier
+          item.price = item.get_price(@user) * multiplier
           if @user.round
             item.price = (((item.price/10.0).ceil) *10 )-1
           end
@@ -57,5 +90,23 @@ class ProductsController < ApplicationController
         product_items.push(item)
       end
       render json: {"product": @product, "product_items": product_items.sort_by {|item| item.price}.reverse}
+    end
+
+    def authenticate(params)
+      key = Base64.decode64(request.headers["key"])
+      secret = Base64.decode64(request.headers["secret"])
+      if key == ENV['PRODUCT_KEY'] && secret == ENV['PRODUCT_SECRET']
+        true
+      else
+        false
+      end
+    end
+
+    def product_params
+      params.require(:product).permit(:name, :number, :description, :category, :images => [])
+    end
+
+    def product_item_params
+      params.require(:product).permit(:product_items => [:number, :dimensions, :description, :product_number, :price, :id])["product_items"]
     end
 end

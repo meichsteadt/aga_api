@@ -54,4 +54,7 @@ Rails.application.configure do
     password:             'agapassword',
     authentication:       'plain',
     enable_starttls_auto: true  }
+    config.action_controller.perform_caching = true
+    Mime::Type.register "image/jpg", :jpg
+
 end

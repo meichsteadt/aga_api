@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211230557) do
+ActiveRecord::Schema.define(version: 20180216033619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,11 @@ ActiveRecord::Schema.define(version: 20180211230557) do
   end
 
   create_table "prices", force: :cascade do |t|
-    t.string "number"
-    t.float  "price"
+    t.integer  "warehouse_id"
+    t.integer  "product_item_id"
+    t.float    "amount"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "product_items", force: :cascade do |t|
@@ -64,7 +67,7 @@ ActiveRecord::Schema.define(version: 20180211230557) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.string   "category"
-    t.integer  "popularity"
+    t.integer  "popularity",       default: 0
     t.integer  "related_products", default: [],              array: true
     t.string   "images",           default: [],              array: true
     t.string   "thumbnail"
@@ -100,6 +103,8 @@ ActiveRecord::Schema.define(version: 20180211230557) do
     t.float    "home_mult",       default: 2.2
     t.string   "sort_by",         default: "price"
     t.boolean  "round",           default: false
+    t.integer  "warehouse_id"
+    t.boolean  "show_prices",     default: true
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
   end
 
@@ -132,6 +137,11 @@ ActiveRecord::Schema.define(version: 20180211230557) do
     t.datetime "started_at"
     t.index ["user_id"], name: "index_visits_on_user_id", using: :btree
     t.index ["visit_token"], name: "index_visits_on_visit_token", unique: true, using: :btree
+  end
+
+  create_table "warehouses", force: :cascade do |t|
+    t.string  "name"
+    t.boolean "show_stock", default: false
   end
 
 end

@@ -2,7 +2,8 @@ require 'csv'
 require 'net/ftp'
 
 class ProductItem < ApplicationRecord
-
+  has_many :prices
+  has_many :warehouses, through: :prices
   def self.reset_prices
     ProductItem.all.each {|prod| prod.update(price: nil)}
   end
@@ -292,5 +293,10 @@ class ProductItem < ApplicationRecord
         pi.update(can_sell: can_sell_qty, confirmed: confirmed)
       end
     end
+  end
+
+  def get_price(user)
+    warehouse_id = user.warehouse_id
+    self.prices.find_by_warehouse_id(warehouse_id).amount
   end
 end

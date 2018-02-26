@@ -28,6 +28,7 @@ gem 'jwt'
 gem 'ahoy_matey'
 gem 'whenever'
 gem 'aws-sdk', '~> 2'
+gem 'rest-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

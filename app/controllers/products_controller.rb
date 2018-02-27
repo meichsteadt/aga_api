@@ -66,6 +66,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    if authenticate(params)
+      @product = Product.find(params[:id])
+      @product.destroy
+      render json: 'Deleted successfully'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

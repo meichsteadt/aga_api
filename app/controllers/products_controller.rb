@@ -69,6 +69,7 @@ class ProductsController < ApplicationController
   def destroy
     if authenticate(params)
       @product = Product.find(params[:id])
+      @product.product_items.destroy
       @product.destroy
       render json: 'Deleted successfully'
     end

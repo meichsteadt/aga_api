@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Raleway" rel="stylesheet">
   </head>
   <body>
-    <h1>Thank you for using Homelegance Kiosk!</h1>
-    <h2>Your product is below</h2>
+    <h1 style="font-family: 'Josefin Slab', serif;">Thank you for using the Homelegance Kiosk!</h1>
 
-    <img src="<%= @product.thumbnail %>" alt="Homelegance <%= @product.name %>">
-    <h1><%= @product.name %></h1>
+    <div style="width: 48%; margin: 1%; float: left;">
+      <img src="<%= @product.thumbnail %>" alt="Homelegance <%= @product.name %>" style="max-width: 100%;">
+    </div>
+    <div style="width: 48%; margin: 1%; float: left;">
+      <h1 style="font-family: 'Josefin Slab', serif;"><%= @product.name %></h1>
+      <h2 style="font-family: 'Josefin Slab', serif;"><%= @product.number %></h2>
+      <p style="font-family: 'Raleway', sans-serif; font-size: 18px;"><%= @product.description.encode('utf-8') %></p>
+    </div>
   </body>
 </html>

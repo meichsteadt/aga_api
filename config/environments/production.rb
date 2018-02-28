@@ -82,9 +82,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'example.com',
-    user_name:            'homelegance.kiosk',
-    password:             'agapassword',
+    domain:               'homelegance-kiosk.com',
+    user_name:            ENV['EMAIL_USERNAME'],
+    password:             ENV['EMAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true  }
+    config.action_controller.perform_caching = true
 end

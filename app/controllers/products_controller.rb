@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     if params[:user_id]
       show_user_products(params)
     else
-      render json: {"product": @product, "product_items": @product.product_items }
+      render json: {"product": @product, "product_items": @product.product_items, "sub_categories": @product.sub_categories }
     end
   end
 
@@ -37,9 +37,14 @@ class ProductsController < ApplicationController
     if authenticate(params)
       @product = Product.new(product_params)
       if @product.save!
-        @product.update(thumbnail: @product.images[0].gsbu('homelegance', 'homelegance-resized'))
+        if @product.images.length > 0
+          @product.update(thumbnail: @product.images[0].gsub('homelegance', 'homelegance-resized'))
+        end
         if params[:product][:product_items]
           product_item_params.each {|e| @product.product_items.create(e)}
+        end
+        if params[:product][:sub_categories]
+          sub_categories_params.each {|e| @product.sub_categories.push(SubCategory.find(e))}
         end
         render json: {"product": @product.as_json, "product_items": @product.product_items}
       else
@@ -56,6 +61,10 @@ class ProductsController < ApplicationController
       if @product.update(product_params)
         if params[:product][:product_items]
           product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
+        end
+        if params[:product][:sub_categories]
+          @product.sub_categories.delete_all
+          sub_categories_params.each {|e| @product.sub_categories.push(SubCategory.find(e))}
         end
         render json: {"product": @product.as_json, "product_items": @product.product_items}
       else
@@ -117,5 +126,9 @@ class ProductsController < ApplicationController
 
     def product_item_params
       params.require(:product).permit(:product_items => [:number, :dimensions, :description, :product_number, :price, :id])["product_items"]
+    end
+
+    def sub_categories_params
+      params.require(:product).permit(:sub_categories => [])["sub_categories"]
     end
 end

@@ -93,6 +93,10 @@ class Product < ApplicationRecord
     end
   end
 
+  def get_avg_price
+    self.update(avg_price: self.product_items.map {|e| e.price }.sum/self.product_items.count)
+  end
+
   def self.update_files
     `python bedroom_scraper.py`
     `python bedroom_items_scraper.py`

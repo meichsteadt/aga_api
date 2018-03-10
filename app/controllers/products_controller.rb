@@ -42,6 +42,7 @@ class ProductsController < ApplicationController
         end
         if params[:product][:product_items]
           product_item_params.each {|e| @product.product_items.create(e)}
+          @product.get_avg_price
         end
         if params[:product][:sub_categories]
           sub_categories_params.each {|e| @product.sub_categories.push(SubCategory.find(e))}

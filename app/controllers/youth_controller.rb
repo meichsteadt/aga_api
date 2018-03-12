@@ -21,7 +21,7 @@ class YouthController < ApplicationController
       sort_by = User.find(params[:user_id]).sort_by
       sort_by == "price"? @products = @products.order(avg_price: :desc, name: :asc, number: :asc) : @products = @products.order(popularity: :desc, name: :asc, number: :asc)
     end
-    render json: @products[min..max]
+    render json: {"products": @products[min..max], "pages": @products.length, "page_number": pagenumber}
   end
 
   private

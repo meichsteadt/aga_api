@@ -19,7 +19,7 @@ class SubCategoriesController < ApplicationController
     else
       @sub_categories = SubCategory.where(parent_category: @category).sort_by {|cat| cat.products.length}.reverse
     end
-    render json: {"sub_categories": @sub_categories, "pages": SubCategory.where(parent_category: @category).length}
+    render json: {"sub_categories": @sub_categories, "pages": SubCategory.where(parent_category: @category).length, "page_number": params[:page_number]}
   end
 
 private

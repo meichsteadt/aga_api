@@ -1,8 +1,7 @@
 class UserMailer < ApplicationMailer
-  def email_user(user, password)
-    @user = user
+  def email_user(email, password)
+    @email = email
     @password = password
-    mail(to: @user.login, subject: "Homelegance Kiosk Information")
-    mail(to: "matteichsteadt@gmail.com", subject: "Homelegance Kiosk Information")
+    mail(to: @email, subject: "Homelegance Kiosk Information")
   end
 end

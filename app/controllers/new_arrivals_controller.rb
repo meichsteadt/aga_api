@@ -1,6 +1,6 @@
 class NewArrivalsController < ApplicationController
   def index
-    @products = Product.where("created_at >= ?", (DateTime.now - 90))
+    @products = Product.where("created_at >= ?", (DateTime.now - 90)).sort_by {|e| e.category}
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
     end

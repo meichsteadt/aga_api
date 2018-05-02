@@ -61,7 +61,6 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       if @product.update(product_params)
         if params[:product][:product_items]
-          product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
           product_item_params.each do |e|
             if @product.product_items.find(e["id"]).prices.where(warehouse_id: params[:warehouse_id]).any?
               @product.product_items.find(e["id"]).prices.where(warehouse_id: params[:warehouse_id]).update(warehouse_id: params[:warehouse_id], amount: e['price'])
@@ -69,6 +68,8 @@ class ProductsController < ApplicationController
               @product.product_items.find(e["id"]).prices.create(warehouse_id: params[:warehouse_id], amount: e['price'])
             end
           end
+          product_item_params.each {|e| e["price"] = @product.product_items.find(e["id"]).price}
+          product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
         end
         if params[:product][:sub_categories]
           @product.sub_categories.delete_all

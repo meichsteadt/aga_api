@@ -69,7 +69,7 @@ class ProductsController < ApplicationController
             end
           end
           product_item_params.each {|e| e["price"] = @product.product_items.find(e["id"]).price}
-          product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
+          product_item_params.each {|e| @product.product_items.find(e["id"]).update(e.except(:price))}
         end
         if params[:product][:sub_categories]
           @product.sub_categories.delete_all

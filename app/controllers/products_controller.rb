@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
           product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
           product_item_params.each do |e|
             if @product.product_items.find(e["id"]).prices.where(warehouse_id: params[:warehouse_id]).any?
-              @product.product_items.find(e["id"]).prices.update(warehouse_id: params[:warehouse_id], amount: e['price'])
+              @product.product_items.find(e["id"]).prices.where(warehouse_id: params[:warehouse_id]).update(warehouse_id: params[:warehouse_id], amount: e['price'])
             else
               @product.product_items.find(e["id"]).prices.create(warehouse_id: params[:warehouse_id], amount: e['price'])
             end
@@ -109,6 +109,8 @@ class ProductsController < ApplicationController
           price = item.get_price(@user) * multiplier
           if @user.round
             item.price = (((price/10.0).ceil) *10 )-1
+          else
+            item.price = price
           end
         else
           item.price = nil

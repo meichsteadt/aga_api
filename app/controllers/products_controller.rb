@@ -62,6 +62,13 @@ class ProductsController < ApplicationController
       if @product.update(product_params)
         if params[:product][:product_items]
           product_item_params.each {|e| @product.product_items.find(e["id"]).update(e)}
+          product_item_params.each do |e|
+            if @product.product_items.find(e["id"]).prices.where(warehouse_id: params[:warehouse_id]).any?
+              @product.product_items.find(e["id"]).prices.update(warehouse_id: params[:warehouse_id], amount: e['price'])
+            else
+              @product.product_items.find(e["id"]).prices.create(warehouse_id: params[:warehouse_id], amount: e['price'])
+            end
+          end
         end
         if params[:product][:sub_categories]
           @product.sub_categories.delete_all
@@ -99,16 +106,16 @@ class ProductsController < ApplicationController
       multiplier = @user.multiplier(@product.category)
       @product.product_items.each do |item|
         unless multiplier.nil?
-          item.price = item.get_price(@user) * multiplier
+          price = item.get_price(@user) * multiplier
           if @user.round
-            item.price = (((item.price/10.0).ceil) *10 )-1
+            item.price = (((price/10.0).ceil) *10 )-1
           end
         else
           item.price = nil
         end
         product_items.push(item)
       end
-      render json: {"product": @product, "product_items": product_items.sort_by {|item| item.price}.reverse}
+      render json: {"product": @product, "product_items": product_items.sort_by {|item| item.get_price(@user)}.reverse, sub_categories: @product.sub_categories}
     end
 
     def authenticate(params)

@@ -296,8 +296,20 @@ class ProductItem < ApplicationRecord
   end
 
   def get_price(user)
-    # warehouse_id = user.warehouse_id
-    # self.prices.find_by_warehouse_id(warehouse_id).amount
-    self.price
+    warehouse_id = user.warehouse_id
+    price = self.prices.find_by_warehouse_id(warehouse_id)
+    if price
+      return price.amount
+    else
+      return self.price
+    end
+  end
+
+  def self.priced(warehouse_id)
+    self.joins(:prices).where('prices.warehouse_id = ?', warehouse_id)
+  end
+
+  def self.unpriced(warehouse_id)
+    self.all - self.priced(warehouse_id)
   end
 end

@@ -40,4 +40,8 @@ class User < ApplicationRecord
       users << JSON.parse(user.to_json)
     end
   end
+
+  def multipliers=(n)
+    self.update(bedroom_mult: n, dining_mult: n, seating_mult: n, youth_mult: n, occasional_mult: n, home_mult: n)
+  end
 end

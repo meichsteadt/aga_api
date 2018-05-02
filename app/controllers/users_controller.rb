@@ -50,7 +50,7 @@ class UsersController < ApplicationController
       if params[:password]
         params[:password] = Base64.decode64(params[:password])
       end
-      params.permit(:login, :password, :bedroom_mult, :dining_mult, :seating_mult, :youth_mult, :occasional_mult, :home_mult)
+      params.permit(:login, :password, :bedroom_mult, :dining_mult, :seating_mult, :youth_mult, :occasional_mult, :home_mult, :warehouse_id)
     end
 
     def authenticate(params)

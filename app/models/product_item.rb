@@ -4,6 +4,7 @@ require 'net/ftp'
 class ProductItem < ApplicationRecord
   has_many :prices
   has_many :warehouses, through: :prices
+  belongs_to :product
   def self.reset_prices
     ProductItem.all.each {|prod| prod.update(price: nil)}
   end

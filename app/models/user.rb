@@ -2,8 +2,10 @@ class User < ApplicationRecord
   has_secure_password
   has_secure_token :auth_token
   has_many :emails
-  validates :login, uniqueness: true
   has_many :visits
+  belongs_to :warehouse
+  has_and_belongs_to_many :products
+  validates :login, uniqueness: true
 
   def invalidate_token
     self.update_columns(token: nil)

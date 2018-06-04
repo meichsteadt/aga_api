@@ -82,10 +82,10 @@ ActiveRecord::Schema.define(version: 20180503002137) do
   end
 
   create_table "products_users", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "products_id"
-    t.index ["products_id"], name: "index_products_users_on_products_id", using: :btree
-    t.index ["users_id"], name: "index_products_users_on_users_id", using: :btree
+    t.integer "user_id"
+    t.integer "product_id"
+    t.index ["product_id"], name: "index_products_users_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_products_users_on_user_id", using: :btree
   end
 
   create_table "products_warehouses", force: :cascade do |t|

@@ -4,10 +4,14 @@ Rails.application.routes.draw do
     resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :new_arrivals
   end
   resources :emails
-  resources :product_items, :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches
+  resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches
   get 'sub_categories/:category', to: 'sub_categories#show'
   resources :sub_categories
   resources :images
+
+  resources :product_items do
+    resources :prices
+  end
 
   scope :format => true, :constraints => { :format => 'json' } do
     post   "/login"       => "sessions#create"

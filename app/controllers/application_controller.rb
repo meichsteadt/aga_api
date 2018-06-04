@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
       User.find_by(auth_token: token)
     end
   end
+
+  def authenticate_key
+    key = Base64.decode64(request.headers["key"])
+    secret = Base64.decode64(request.headers["secret"])
+    unless key == ENV['PRODUCT_KEY'] && secret == ENV['PRODUCT_SECRET']
+      render_unauthorized("unauthorized access")
+    end
+  end
 end

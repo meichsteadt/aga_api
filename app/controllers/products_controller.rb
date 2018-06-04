@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
         @products = SubCategory.find(params[:sub_category]).products.order(avg_price: :desc, name: :asc, number: :asc)
       end
     else
-      @products = Product.all.sort_by {|e| e.avg_price}
+      @products = Product.order(:avg_price)
     end
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
@@ -41,7 +41,10 @@ class ProductsController < ApplicationController
           @product.update(thumbnail: @product.images[0].gsub('homelegance', 'homelegance-resized'))
         end
         if params[:product][:product_items]
-          product_item_params.each {|e| @product.product_items.create(e)}
+          product_item_params.each do |pi|
+            @product_item = @product.product_items.create(pi)
+            @product_item.prices.create(warehouse_id: params[:warehouse_id], amount: pi[:price])
+          end
           @product.get_avg_price
         end
         if params[:product][:sub_categories]

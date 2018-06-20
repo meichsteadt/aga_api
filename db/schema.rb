@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503002137) do
+ActiveRecord::Schema.define(version: 20180620040302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20180503002137) do
     t.boolean  "round",           default: false
     t.integer  "warehouse_id"
     t.boolean  "show_prices",     default: true
+    t.boolean  "show_sku",        default: false
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
   end
 

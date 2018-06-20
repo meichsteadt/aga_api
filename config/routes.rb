@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # get 'users/:login/:password', to: "users#show"
   resources :users do
-    resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :new_arrivals
+    resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :new_arrivals, :show_sku
   end
   resources :emails
   resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches

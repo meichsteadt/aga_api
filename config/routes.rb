@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :new_arrivals, :show_sku
   end
   resources :emails
-  resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches
+  resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :searches, :categories
   get 'sub_categories/:category', to: 'sub_categories#show'
   resources :sub_categories
   resources :images

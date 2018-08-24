@@ -15,6 +15,19 @@ class Product < ApplicationRecord
     self.update(thumbnail: self.images[0].gsub("homelegance", "homelegance-resized"))
   end
 
+  def scramble_numbers
+    number = self.number.split("-")
+    if number[0].downcase.scan(/[a-z]/).length > 0
+      new_number = "1" + number[0][0 .. number[0].downcase.scan(/[0-9]/).count - 1] + "2" + number[0][number[0].downcase.scan(/[0-9]/).count .. -1]
+    else
+      new_number = "1" + number[0] + "2"
+    end
+    if number.length > 1
+      new_number += "-" + number[1]
+    end
+    new_number
+  end
+
   def self.get_avg_price
     Product.all.each do |product|
       sum = 0

@@ -13,6 +13,9 @@ class ProductsController < ApplicationController
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
       sort_by == "price"? @products = @products.order(avg_price: :desc, name: :asc, number: :asc) : @products = @products.order(popularity: :desc, name: :asc, number: :asc)
+      if User.find(params[:user_id]).scramble_numbers
+        @products[min..max].each {|e| e.name = e.scramble_numbers}
+      end
     end
     if params[:page_number]
       pagenumber = params[:page_number].to_i
@@ -120,6 +123,11 @@ class ProductsController < ApplicationController
           item.price = nil
         end
         product_items.push(item)
+      end
+      if @user.scramble_numbers
+        @product.number = @product.scramble_numbers
+        @product.name = ""
+        product_items.each {|e| e.number = e.scramble_numbers}
       end
       render json: {"product": @product, "product_items": product_items.sort_by {|item| item.get_price(@user)}.reverse, sub_categories: @product.sub_categories}
     end

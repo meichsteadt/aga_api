@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
       sort_by = User.find(params[:user_id]).sort_by
       sort_by == "price"? @products = @products.order(avg_price: :desc, name: :asc, number: :asc) : @products = @products.order(popularity: :desc, name: :asc, number: :asc)
       if User.find(params[:user_id]).scramble_numbers
-        @products[min..max].each {|e| e.name = e.scramble_numbers}
+        @products.each {|e| e.name = e.scramble_numbers}
       end
     end
     if params[:page_number]

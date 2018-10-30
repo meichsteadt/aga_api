@@ -2,7 +2,9 @@ class MissingItemsController < ApplicationController
   before_action :authenticate_key
 
   def index
-    render json: missing_items
+    respond_to do |format|
+      format.json {render json: missing_items}
+    end
   end
 
 private

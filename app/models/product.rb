@@ -4,6 +4,8 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :warehouses, unique: true
   has_and_belongs_to_many :users
 
+  scope :without_product_items, -> {left_outer_joins(:product_items).where(product_items: { id: nil })}
+
   def get_related_products
     if self.number[/([0-9]+)/]
       related_products = Product.where("number LIKE ?", self.number[/([0-9]+)/] + "%").sort_by {|product| product.popularity}.reverse

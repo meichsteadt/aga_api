@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   # get 'users/:login/:password', to: "users#show"
+
+  post "get_prices_to_update", to: 'update_prices#index'
+  post "update_prices", to: 'update_prices#update'
+  post "missing_items", to: 'missing_items#index'
   resources :users do
     resources :dining, :seating, :bedroom, :products, :youth, :occasional, :home, :new_arrivals, :show_sku
   end

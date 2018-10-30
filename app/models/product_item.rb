@@ -86,4 +86,40 @@ class ProductItem < ApplicationRecord
   def self.unpriced(warehouse_id)
     self.all - self.priced(warehouse_id)
   end
+
+  def self.delete_discontinued(arr)
+    (ProductItem.pluck(:number) & arr).each do |number|
+      @pi = ProductItem.where(number: number)
+      @pi.destroy if @pi
+    end
+    Product.without_product_items.each {|e| e.destroy}
+  end
+
+  def self.get_prices_to_update(hash)
+    @product_items = []
+    hash.each do |k, v|
+      @pi = ProductItem.find_by(number: k)
+      if @pi
+        @product_items << @pi if @pi.price != v.to_i
+      end
+    end
+    @product_items
+  end
+
+  def self.update_prices(hash)
+    hash.each do |k, v|
+      @pi = ProductItem.find(k)
+      if @pi
+        @pi.update(price: v.to_i)
+      end
+    end
+  end
+
+  def self.orphaned
+    ProductItem.where("product_id NOT IN (?)", Product.pluck(:id))
+  end
+
+  def self.delete_orphans
+    ProductItem.orphaned.destroy_all
+  end
 end

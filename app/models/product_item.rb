@@ -124,6 +124,6 @@ class ProductItem < ApplicationRecord
   end
 
   def self.get_csv
-    ProductItem.includes(:product).pluck("number", "price", "description", "dimensions", "products.number")
+    ProductItem.order(:number).includes(:product).pluck("number", "price", "description", "dimensions", "products.number")
   end
 end

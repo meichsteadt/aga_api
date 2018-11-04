@@ -122,4 +122,8 @@ class ProductItem < ApplicationRecord
   def self.delete_orphans
     ProductItem.orphaned.destroy_all
   end
+
+  def self.get_csv
+    ProductItem.includes(:product).pluck("number", "price", "description", "dimensions", "products.number")
+  end
 end

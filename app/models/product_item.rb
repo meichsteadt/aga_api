@@ -89,7 +89,7 @@ class ProductItem < ApplicationRecord
 
   def self.delete_discontinued(arr)
     ProductItem.where(number: arr).delete_all
-    Product.without_product_items.delete_all
+    Product.without_product_items.each {|e| e.destroy}
   end
 
   def self.get_prices_to_update(hash)

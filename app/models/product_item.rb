@@ -88,11 +88,8 @@ class ProductItem < ApplicationRecord
   end
 
   def self.delete_discontinued(arr)
-    (ProductItem.pluck(:number) & arr).each do |number|
-      @pi = ProductItem.where(number: number)
-      @pi.destroy if @pi
-    end
-    Product.without_product_items.each {|e| e.destroy}
+    ProductItem.where(number: arr).delete_all
+    Product.without_product_items.delete_all
   end
 
   def self.get_prices_to_update(hash)

@@ -98,9 +98,11 @@ class ProductItem < ApplicationRecord
   def self.get_prices_to_update(hash)
     @product_items = []
     hash.each do |k, v|
-      @pi = ProductItem.find_by(number: k)
+      @pi = ProductItem.where(number: k)
       if @pi
-        @product_items << @pi if @pi.price != v.to_i
+        @pi.each do |pi|
+          @product_items << pi if pi.price != v.remove(",").to_f.ceil
+        end
       end
     end
     @product_items
@@ -110,7 +112,7 @@ class ProductItem < ApplicationRecord
     hash.each do |k, v|
       @pi = ProductItem.find(k)
       if @pi
-        @pi.update(price: v.to_i)
+        @pi.update(price: v.remove(",").to_f.ceil)
       end
     end
   end

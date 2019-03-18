@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :sub_categories, unique: true
   has_and_belongs_to_many :warehouses, unique: true
   has_and_belongs_to_many :users
+  validates_uniqueness_of :number
 
   scope :without_product_items, -> {left_outer_joins(:product_items).where(product_items: { id: nil })}
 
@@ -51,7 +52,11 @@ class Product < ApplicationRecord
   end
 
   def get_avg_price
-    self.update(avg_price: self.product_items.map {|e| e.price }.sum/self.product_items.count)
+    begin
+      self.update(avg_price: self.product_items.map {|e| e.price }.sum/self.product_items.count)
+    rescue
+      self.update(avg_price: nil)
+    end
   end
 
   def self.update_files

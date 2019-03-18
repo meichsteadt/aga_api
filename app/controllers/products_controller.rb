@@ -113,9 +113,13 @@ class ProductsController < ApplicationController
       multiplier = @user.multiplier(@product.category)
       @product.product_items.each do |item|
         unless multiplier.nil?
-          price = item.get_price(@user) * multiplier
+          begin
+            price = item.get_price(@user) * multiplier
+          rescue
+            price = ""
+          end
           if @user.round
-            item.price = (((price/10.0).ceil) *10 )-1
+            item.price = (((price/10.0).ceil) * 10 )-1
           else
             item.price = price
           end
@@ -129,7 +133,7 @@ class ProductsController < ApplicationController
         @product.name = ""
         product_items.each {|e| e.number = e.scramble_numbers}
       end
-      render json: {"product": @product, "product_items": product_items.sort_by {|item| item.get_price(@user)}.reverse, sub_categories: @product.sub_categories}
+      render json: {"product": @product, "product_items": product_items.select{|e| e.price}.sort_by {|item| item.price }.reverse, sub_categories: @product.sub_categories}
     end
 
     def authenticate(params)

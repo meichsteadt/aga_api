@@ -1,6 +1,6 @@
 class NewArrivalsController < ApplicationController
   def index
-    @products = Product.where("created_at >= ?", (DateTime.now - 90)).sort_by {|e| e.category}
+    @products = Product.where("created_at >= ?", (DateTime.now - 90)).order(:id)
     if params[:user_id]
       sort_by = User.find(params[:user_id]).sort_by
     end
@@ -10,7 +10,8 @@ class NewArrivalsController < ApplicationController
       max = min + 5
       render json: {"products": @products[min..max], "pages": @products.length, "page_number": pagenumber}
     else
-      render json: @products.sort_by {|e| e.avg_price}.reverse.to_json
+      # render json: @products.sort_by {|e| e.avg_price}.reverse.to_json
+      render json: @products.sort_by {|e| e.number}.reverse.to_json
     end
   end
 end
